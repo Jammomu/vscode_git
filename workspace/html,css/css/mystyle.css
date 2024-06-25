@@ -1,0 +1,59 @@
+@charset "UTF-8";
+.container{
+    margin: 0 auto;
+    width: 960px;
+}
+.row{
+    overflow: hidden;
+}
+.span{
+    float: left;
+}
+.span-1{
+    width: 80px;
+    background: #222;
+}
+.span-2{
+    width: 160px;
+    background: #444;
+}
+.span-3{
+    width: 240px;
+    background: #666;
+}
+.span-4{
+    width: 320px;
+    background: #888;
+}
+.span-5{
+    width: 400px;
+    background: #aaa;
+}
+.span-6{
+    width: 480px;
+    background: aqua;
+}
+.span-7{
+    width: 560px;
+    background: rgb(46, 155, 73);
+}
+.span-8{
+    width: 640px;
+    background: rgb(188, 26, 194);
+}
+.span-9{
+    width: 720px;
+    background: rgb(127, 36, 211);
+}
+.span-10{
+    width: 800px;
+    background: aqua;
+}
+.span-11{
+    width: 880px;
+    background: aqua;
+}
+.span-12{
+    width: 960px;
+    background: aqua;
+}

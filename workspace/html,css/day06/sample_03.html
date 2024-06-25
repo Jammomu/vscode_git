@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .graph{width: 610px; border: 3px solid black;}
+        .bar{
+            width: 10px;
+            height: 50px;
+            background-color: orange;
+            margin: 5px;
+            transition-duration: 5s;
+            /* transition-property: width; */
+            transition-property: background-color,width;
+        }
+        .graph:hover .bar:nth-child(1){width: 600px; background-color: blue;}
+        .graph:hover .bar:nth-child(2){width: 500px; background-color: lightblue;}
+        .graph:hover .bar:nth-child(3){width: 400px; background-color: lightcoral;}
+        .graph:hover .bar:nth-child(4){width: 300px; background-color: lightgreen;}
+        .graph:hover .bar:nth-child(5){width: 200px; background-color: lightslategray;}
+        .graph:hover .bar:nth-child(6){width: 100px; background-color: cyan;}
+
+    </style>
+</head>
+<body>
+    <div class="graph">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+</body>
+</html>

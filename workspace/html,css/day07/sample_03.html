@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{font-family: sans-serif; color: #222;}
+        li{list-style: none;}
+        a{text-decoration: none;}
+        .screen{
+            width: 960px;
+            margin: 0 auto;
+            height: 70px;
+            line-height: 70px;
+            position: relative;
+            background: #ccc;
+        }
+        .screen>h1{
+            text-align: center;
+        }
+        .container{
+            width: 960px;
+            margin: 0 auto;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .seat{
+            margin: 0 auto;
+        }
+        input{display: none;}
+        .seat label{
+            width: 36px;
+            margin: 0 auto;
+            margin-left: 3px;
+            padding: 3px;
+            display: block;
+            float: left;
+            border: 3px solid #777;
+            background: #ddd;
+            border-radius: 20%;
+            overflow: hidden;
+            font-size: 14px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .line{
+            width: 860px;
+            margin: 0 auto;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        .seat label:nth-of-type(6){
+            margin-left: 40px;
+        }
+        .seat label:nth-of-type(16){
+            margin-left: 40px;
+        }
+        .seat label:hover{
+            background: lightblue;
+        }
+        .seat input:checked+label{
+            background: #55f;
+            color: #fff;
+        }
+        button{
+            width: 90px;
+            margin: 0 auto;
+            margin-right: 50px;
+            padding: 7px;
+            border: 3px outset #555;
+            border-radius: 15px 15px 15px 15px;
+            background-color: #aad;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="screen">
+        <h1>Screen</h1>
+    </div>
+    <div class="container">
+        <div class="seat">
+            <div class="line">
+                <input type="checkbox" name="checkbox" id="a1"><label for="a1">A01</label><input type="checkbox" name="checkbox" id="a2"><label for="a2">A02</label><input type="checkbox" name="checkbox" id="a3"><label for="a3">A03</label><input type="checkbox" name="checkbox" id="a4"><label for="a4">A04</label><input type="checkbox" name="checkbox" id="a5"><label for="a5">A05</label><input type="checkbox" name="checkbox" id="a6"><label for="a6">A06</label><input type="checkbox" name="checkbox" id="a7"><label for="a7">A07</label><input type="checkbox" name="checkbox" id="a8"><label for="a8">A08</label><input type="checkbox" name="checkbox" id="a9"><label for="a9">A09</label><input type="checkbox" name="checkbox" id="a10"><label for="a10">A10</label><input type="checkbox" name="checkbox" id="a11"><label for="a11">A11</label><input type="checkbox" name="checkbox" id="a12"><label for="a12">A12</label><input type="checkbox" name="checkbox" id="a13"><label for="a13">A13</label><input type="checkbox" name="checkbox" id="a14"><label for="a14">A14</label><input type="checkbox" name="checkbox" id="a15"><label for="a15">A15</label><input type="checkbox" name="checkbox" id="a16"><label for="a16">A16</label><input type="checkbox" name="checkbox" id="a17"><label for="a17">A17</label><input type="checkbox" name="checkbox" id="a18"><label for="a18">A18</label><input type="checkbox" name="checkbox" id="a19"><label for="a19">A19</label><input type="checkbox" name="checkbox" id="a20"><label for="a20">A20</label>
+            </div>
+            <div class="line">
+                <input type="checkbox" name="checkbox" id="b1"><label for="b1">B01</label><input type="checkbox" name="checkbox" id="b2"><label for="b2">B02</label><input type="checkbox" name="checkbox" id="b3"><label for="b3">B03</label><input type="checkbox" name="checkbox" id="b4"><label for="b4">B04</label><input type="checkbox" name="checkbox" id="b5"><label for="b5">B05</label><input type="checkbox" name="checkbox" id="b6"><label for="b6">B06</label><input type="checkbox" name="checkbox" id="b7"><label for="b7">B07</label><input type="checkbox" name="checkbox" id="b8"><label for="b8">B08</label><input type="checkbox" name="checkbox" id="b9"><label for="b9">B09</label><input type="checkbox" name="checkbox" id="b10"><label for="b10">B10</label><input type="checkbox" name="checkbox" id="b11"><label for="b11">B11</label><input type="checkbox" name="checkbox" id="b12"><label for="b12">B12</label><input type="checkbox" name="checkbox" id="b13"><label for="b13">B13</label><input type="checkbox" name="checkbox" id="b14"><label for="b14">B14</label><input type="checkbox" name="checkbox" id="b15"><label for="b15">B15</label><input type="checkbox" name="checkbox" id="b16"><label for="b16">B16</label><input type="checkbox" name="checkbox" id="b17"><label for="b17">B17</label><input type="checkbox" name="checkbox" id="b18"><label for="b18">B18</label><input type="checkbox" name="checkbox" id="b19"><label for="b19">B19</label><input type="checkbox" name="checkbox" id="b20"><label for="b20">B20</label>
+            </div>
+            <div class="line">
+                <input type="checkbox" name="checkbox" id="c1"><label for="c1">C01</label><input type="checkbox" name="checkbox" id="c2"><label for="c2">C02</label><input type="checkbox" name="checkbox" id="c3"><label for="c3">C03</label><input type="checkbox" name="checkbox" id="c4"><label for="c4">C04</label><input type="checkbox" name="checkbox" id="c5"><label for="c5">C05</label><input type="checkbox" name="checkbox" id="c6"><label for="c6">C06</label><input type="checkbox" name="checkbox" id="c7"><label for="c7">C07</label><input type="checkbox" name="checkbox" id="c8"><label for="c8">C08</label><input type="checkbox" name="checkbox" id="c9"><label for="c9">C09</label><input type="checkbox" name="checkbox" id="c10"><label for="c10">C10</label><input type="checkbox" name="checkbox" id="c11"><label for="c11">C11</label><input type="checkbox" name="checkbox" id="c12"><label for="c12">C12</label><input type="checkbox" name="checkbox" id="c13"><label for="c13">C13</label><input type="checkbox" name="checkbox" id="c14"><label for="c14">C14</label><input type="checkbox" name="checkbox" id="c15"><label for="c15">C15</label><input type="checkbox" name="checkbox" id="c16"><label for="c16">C16</label><input type="checkbox" name="checkbox" id="c17"><label for="c17">C17</label><input type="checkbox" name="checkbox" id="c18"><label for="c18">C18</label><input type="checkbox" name="checkbox" id="c19"><label for="c19">C19</label><input type="checkbox" name="checkbox" id="c20"><label for="c20">C20</label>
+            </div>
+            <div class="line">
+                <input type="checkbox" name="checkbox" id="d1"><label for="d1">D01</label><input type="checkbox" name="checkbox" id="d2"><label for="d2">D02</label><input type="checkbox" name="checkbox" id="d3"><label for="d3">D03</label><input type="checkbox" name="checkbox" id="d4"><label for="d4">D04</label><input type="checkbox" name="checkbox" id="d5"><label for="d5">D05</label><input type="checkbox" name="checkbox" id="d6"><label for="d6">D06</label><input type="checkbox" name="checkbox" id="d7"><label for="d7">D07</label><input type="checkbox" name="checkbox" id="d8"><label for="d8">D08</label><input type="checkbox" name="checkbox" id="d9"><label for="d9">D09</label><input type="checkbox" name="checkbox" id="d10"><label for="d10">D10</label><input type="checkbox" name="checkbox" id="d11"><label for="d11">D11</label><input type="checkbox" name="checkbox" id="d12"><label for="d12">D12</label><input type="checkbox" name="checkbox" id="d13"><label for="d13">D13</label><input type="checkbox" name="checkbox" id="d14"><label for="d14">D14</label><input type="checkbox" name="checkbox" id="d15"><label for="d15">D15</label><input type="checkbox" name="checkbox" id="d16"><label for="d16">D16</label><input type="checkbox" name="checkbox" id="d17"><label for="d17">D17</label><input type="checkbox" name="checkbox" id="d18"><label for="d18">D18</label><input type="checkbox" name="checkbox" id="d19"><label for="d19">D19</label><input type="checkbox" name="checkbox" id="d20"><label for="d20">D20</label>
+            </div>
+            <div class="line">
+                <input type="checkbox" name="checkbox" id="e1"><label for="e1">E01</label><input type="checkbox" name="checkbox" id="e2"><label for="e2">E02</label><input type="checkbox" name="checkbox" id="e3"><label for="e3">E03</label><input type="checkbox" name="checkbox" id="e4"><label for="e4">E04</label><input type="checkbox" name="checkbox" id="e5"><label for="e5">E05</label><input type="checkbox" name="checkbox" id="e6"><label for="e6">E06</label><input type="checkbox" name="checkbox" id="e7"><label for="e7">E07</label><input type="checkbox" name="checkbox" id="e8"><label for="e8">E08</label><input type="checkbox" name="checkbox" id="e9"><label for="e9">E09</label><input type="checkbox" name="checkbox" id="e10"><label for="e10">E10</label><input type="checkbox" name="checkbox" id="e11"><label for="e11">E11</label><input type="checkbox" name="checkbox" id="e12"><label for="e12">E12</label><input type="checkbox" name="checkbox" id="e13"><label for="e13">E13</label><input type="checkbox" name="checkbox" id="e14"><label for="e14">E14</label><input type="checkbox" name="checkbox" id="e15"><label for="e15">E15</label><input type="checkbox" name="checkbox" id="e16"><label for="e16">E16</label><input type="checkbox" name="checkbox" id="e17"><label for="e17">E17</label><input type="checkbox" name="checkbox" id="e18"><label for="e18">E18</label><input type="checkbox" name="checkbox" id="e19"><label for="e19">E19</label><input type="checkbox" name="checkbox" id="e20"><label for="e20">E20</label>
+            </div>
+            <div class="line">
+                <input type="checkbox" name="checkbox" id="f1"><label for="f1">F01</label><input type="checkbox" name="checkbox" id="f2"><label for="f2">F02</label><input type="checkbox" name="checkbox" id="f3"><label for="f3">F03</label><input type="checkbox" name="checkbox" id="f4"><label for="f4">F04</label><input type="checkbox" name="checkbox" id="f5"><label for="f5">F05</label><input type="checkbox" name="checkbox" id="f6"><label for="f6">F06</label><input type="checkbox" name="checkbox" id="f7"><label for="f7">F07</label><input type="checkbox" name="checkbox" id="f8"><label for="f8">F08</label><input type="checkbox" name="checkbox" id="f9"><label for="f9">F09</label><input type="checkbox" name="checkbox" id="f10"><label for="f10">F10</label><input type="checkbox" name="checkbox" id="f11"><label for="f11">F11</label><input type="checkbox" name="checkbox" id="f12"><label for="f12">F12</label><input type="checkbox" name="checkbox" id="f13"><label for="f13">F13</label><input type="checkbox" name="checkbox" id="f14"><label for="f14">F14</label><input type="checkbox" name="checkbox" id="f15"><label for="f15">F15</label><input type="checkbox" name="checkbox" id="f16"><label for="f16">F16</label><input type="checkbox" name="checkbox" id="f17"><label for="f17">F17</label><input type="checkbox" name="checkbox" id="f18"><label for="f18">F18</label><input type="checkbox" name="checkbox" id="f19"><label for="f19">F19</label><input type="checkbox" name="checkbox" id="f20"><label for="f20">F20</label>
+            </div>
+            <div class="line">
+                <input type="checkbox" name="checkbox" id="g1"><label for="g1">G01</label><input type="checkbox" name="checkbox" id="g2"><label for="g2">G02</label><input type="checkbox" name="checkbox" id="g3"><label for="g3">G03</label><input type="checkbox" name="checkbox" id="g4"><label for="g4">G04</label><input type="checkbox" name="checkbox" id="g5"><label for="g5">G05</label><input type="checkbox" name="checkbox" id="g6"><label for="g6">G06</label><input type="checkbox" name="checkbox" id="g7"><label for="g7">G07</label><input type="checkbox" name="checkbox" id="g8"><label for="g8">G08</label><input type="checkbox" name="checkbox" id="g9"><label for="g9">G09</label><input type="checkbox" name="checkbox" id="g10"><label for="g10">G10</label><input type="checkbox" name="checkbox" id="g11"><label for="g11">G11</label><input type="checkbox" name="checkbox" id="g12"><label for="g12">G12</label><input type="checkbox" name="checkbox" id="g13"><label for="g13">G13</label><input type="checkbox" name="checkbox" id="g14"><label for="g14">G14</label><input type="checkbox" name="checkbox" id="g15"><label for="g15">G15</label><input type="checkbox" name="checkbox" id="g16"><label for="g16">G16</label><input type="checkbox" name="checkbox" id="g17"><label for="g17">G17</label><input type="checkbox" name="checkbox" id="g18"><label for="g18">G18</label><input type="checkbox" name="checkbox" id="g19"><label for="g19">G19</label><input type="checkbox" name="checkbox" id="g20"><label for="g20">G20</label>
+            </div>
+            <div class="line">
+                <input type="checkbox" name="checkbox" id="h1"><label for="h1">H01</label><input type="checkbox" name="checkbox" id="h2"><label for="h2">H02</label><input type="checkbox" name="checkbox" id="h3"><label for="h3">H03</label><input type="checkbox" name="checkbox" id="h4"><label for="h4">H04</label><input type="checkbox" name="checkbox" id="h5"><label for="h5">H05</label><input type="checkbox" name="checkbox" id="h6"><label for="h6">H06</label><input type="checkbox" name="checkbox" id="h7"><label for="h7">H07</label><input type="checkbox" name="checkbox" id="h8"><label for="h8">H08</label><input type="checkbox" name="checkbox" id="h9"><label for="h9">H09</label><input type="checkbox" name="checkbox" id="h10"><label for="h10">H10</label><input type="checkbox" name="checkbox" id="h11"><label for="h11">H11</label><input type="checkbox" name="checkbox" id="h12"><label for="h12">H12</label><input type="checkbox" name="checkbox" id="h13"><label for="h13">H13</label><input type="checkbox" name="checkbox" id="h14"><label for="h14">H14</label><input type="checkbox" name="checkbox" id="h15"><label for="h15">H15</label><input type="checkbox" name="checkbox" id="h16"><label for="h16">H16</label><input type="checkbox" name="checkbox" id="h17"><label for="h17">H17</label><input type="checkbox" name="checkbox" id="h18"><label for="h18">H18</label><input type="checkbox" name="checkbox" id="h19"><label for="h19">H19</label><input type="checkbox" name="checkbox" id="h20"><label for="h20">H20</label>
+            </div>
+            <div class="line">
+                <input type="checkbox" name="checkbox" id="i1"><label for="i1">I01</label><input type="checkbox" name="checkbox" id="i2"><label for="i2">I02</label><input type="checkbox" name="checkbox" id="i3"><label for="i3">I03</label><input type="checkbox" name="checkbox" id="i4"><label for="i4">I04</label><input type="checkbox" name="checkbox" id="i5"><label for="i5">I05</label><input type="checkbox" name="checkbox" id="i6"><label for="i6">I06</label><input type="checkbox" name="checkbox" id="i7"><label for="i7">I07</label><input type="checkbox" name="checkbox" id="i8"><label for="i8">I08</label><input type="checkbox" name="checkbox" id="i9"><label for="i9">I09</label><input type="checkbox" name="checkbox" id="i10"><label for="i10">I10</label><input type="checkbox" name="checkbox" id="i11"><label for="i11">I11</label><input type="checkbox" name="checkbox" id="i12"><label for="i12">I12</label><input type="checkbox" name="checkbox" id="i13"><label for="i13">I13</label><input type="checkbox" name="checkbox" id="i14"><label for="i14">I14</label><input type="checkbox" name="checkbox" id="i15"><label for="i15">I15</label><input type="checkbox" name="checkbox" id="i16"><label for="i16">I16</label><input type="checkbox" name="checkbox" id="i17"><label for="i17">I17</label><input type="checkbox" name="checkbox" id="i18"><label for="i18">I18</label><input type="checkbox" name="checkbox" id="i19"><label for="i19">I19</label><input type="checkbox" name="checkbox" id="i20"><label for="i20">I20</label>
+            </div>
+            <div class="line">
+                <input type="checkbox" name="checkbox" id="j1"><label for="j1">J01</label><input type="checkbox" name="checkbox" id="j2"><label for="j2">J02</label><input type="checkbox" name="checkbox" id="j3"><label for="j3">J03</label><input type="checkbox" name="checkbox" id="j4"><label for="j4">J04</label><input type="checkbox" name="checkbox" id="j5"><label for="j5">J05</label><input type="checkbox" name="checkbox" id="j6"><label for="j6">J06</label><input type="checkbox" name="checkbox" id="j7"><label for="j7">J07</label><input type="checkbox" name="checkbox" id="j8"><label for="j8">J08</label><input type="checkbox" name="checkbox" id="j9"><label for="j9">J09</label><input type="checkbox" name="checkbox" id="j10"><label for="j10">J10</label><input type="checkbox" name="checkbox" id="j11"><label for="j11">J11</label><input type="checkbox" name="checkbox" id="j12"><label for="j12">J12</label><input type="checkbox" name="checkbox" id="j13"><label for="j13">J13</label><input type="checkbox" name="checkbox" id="j14"><label for="j14">J14</label><input type="checkbox" name="checkbox" id="j15"><label for="j15">J15</label><input type="checkbox" name="checkbox" id="j16"><label for="j16">J16</label><input type="checkbox" name="checkbox" id="j17"><label for="j17">J17</label><input type="checkbox" name="checkbox" id="j18"><label for="j18">J18</label><input type="checkbox" name="checkbox" id="j19"><label for="j19">J19</label><input type="checkbox" name="checkbox" id="j20"><label for="j20">J20</label>
+            </div>
+        </div>
+    </div>
+    <div class="Btn_warp">
+        <button class="Btn_warp">예매하기</button>
+    </div>
+</body>
+</html>

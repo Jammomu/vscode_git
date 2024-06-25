@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{
+            font-family: 'helvartica', sans-serif;
+            position: relative;
+            margin: 0 auto;
+        }
+        li{list-style: none;}
+        a{text-decoration: none;}
+
+        /* header */
+        .header{
+            position: relative;
+            width: 980px;
+            height: 160px;
+            margin-bottom: 5px;
+        }
+        .header>h1{
+            text-align: center;
+        }
+        .header>.nav{
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+        }
+
+        /* content */
+        .aside_wrap{
+            position: absolute;
+            top: 160px;
+            left: 980px;
+            width: 350px;
+        }
+        .aside_wrap>.aside_1+.aside_2{
+            overflow: hidden;
+            float: left;
+        }
+        .aside_wrap .aside_header{
+            color: #242;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            width: 300px;
+            height: 30px;
+            line-height: 30px;
+            float: left;
+            box-sizing: border-box;
+        }
+        .aside_wrap .aside_plus{
+            color: #555;
+            width: 50px;
+            height: 30px;
+            line-height: 30px;
+            float: right;
+            font-size: 12px;
+            overflow: hidden;
+        }
+        .asde_wrap .item{
+            overflow: hidden;
+            padding: 10px;
+            float: left;
+        }
+        .thumbnail{float: left;}
+        .description{
+            float: left; 
+            margin-left: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Contact Us</h1>
+        <div class="nav">
+            <li>주소: 경기도 00시 00동 000-00번지 000</li>
+        </div>
+    </div>
+    <div class="content">
+        <div class="section">
+            <img src="http://placehold.it/900x500" alt="">
+        </div>
+        <div class="aside_wrap">
+            <div class="aside_1">
+                <ul class="aside_header">
+                    <label>특별함</li>
+                    <ul class="aside_plus">
+                        <label><a href="#">더보기 +</a></li>
+                    </ul>
+                </ul>
+                <ul class="item">
+                    <a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" alt="">
+                        </div>
+                        <div class="description">
+                            <p>사계절 실내 바비큐자엥서 편안하게 마음껏 드세요~</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" alt="">
+                        </div>
+                        <div class="description">
+                            <p>팬션 카페테리아에서 분위기 있는 음악과 함께 커피...</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" alt="">
+                        </div>
+                        <div class="description">
+                            <p>텃밭에서 직접 기른 싱싱한 채소 및 찌개로 조식서비...</p>
+                        </div>
+                    </a>
+                </ul>
+            </div>
+            <div class="aside_2">
+                <ul class="aside_header">
+                    <label>인근여행지</label>
+                    <ul class="aside_plus">
+                        <label><a href="#">더보기 +</a></label>
+                    </ul>
+                </ul>
+                <ul class="item">
+                    <a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" alt="">
+                        </div>
+                        <div class="description">
+                            <p>00산 자락에 위치한 천년고찰 00사를 오르다보면 정다...</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" alt="">
+                        </div>
+                        <div class="description">
+                            <p>팬션 앞 00산 정상에는 이름모를 수많은 야생화가 끝...</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" alt="">
+                        </div>
+                        <div class="description">
+                            <p>팬션 앞 울창한 숲길을 따라 오르면 만나게 되는 곳...</p>
+                        </div>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

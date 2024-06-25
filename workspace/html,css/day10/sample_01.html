@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{font-size: 5vw;}
+        @media screen and (max-width: 300px){
+            h1{
+                background-color: blue;
+                color: #fff;
+            }
+            p{
+                background-color: aqua;
+                color: blueviolet;
+            }
+        }
+        @media screen and (min-width: 768px) and (max-width: 1024px){
+            h1{
+                background-color: green;
+                color: yellow;
+            }
+            p{
+                background-color: aqua;
+                color: blueviolet;
+            }
+        }
+        @media screen and (min-width: 1025px){
+            h1{
+                background-color: gray;
+                color: white;
+            }
+            p{
+                background-color: aqua;
+                color: blueviolet;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>반응형테스트</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quod soluta assumenda rerum rem recusandae, error maxime totam quae est quidem nostrum adipisci, voluptatum odio iusto ipsam velit porro. Cumque.</p>
+</body>
+</html>

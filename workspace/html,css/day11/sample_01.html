@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function log(...texts){
+            const logDiv = document.getElementById('log');
+            const newLogEntry = document.createElement('div');
+            // 여러 텍스트 인자를 하나의 문자열로 합칩니다.
+            newLogEntry.textContent = texts.join(' ');
+            logDiv.appendChild(newLogEntry);
+        }
+    </script>
+</head>
+<body>
+    <div id="log"></div>
+    <script>
+        // 산술연산자
+        // let num10 = 10;
+        // let num20 = 20;
+        // let num03 = 3;
+        // log(num10 + num20);
+        // log(num10 - num20);
+        // log(num10 * num20);
+        // log(num10 / num03);
+        // log(num10 % num03);
+
+        // 대입연산자
+        // let sum01 = 10;
+        // log(sum01);
+        // sum01 += 5;
+        // log(sum01);
+        // sum01 -= 5;
+        // log(sum01);
+        // sum01 *= 5;
+        // log(sum01);
+        // sum01 /= 5;
+        // log(sum01);
+        // sum01 %= 5;
+        // log(sum01);
+
+        // 증감연산자
+        // let a = 10;
+        // let b = a++;
+        // log(a, b);
+        // let A = 10;
+        // let B = ++A;
+        // log(A, B);
+        // let c = 10;
+        // let d = c--;
+        // log(c, d);
+        // let C = 10;
+        // let D = --C;
+        // log(C, D);
+
+        // let a = 10;
+        // let b, y;
+        // let x = 10;
+        // b = a++;
+        // log(a, b);
+        // y = ++x;
+        // log(x, y);
+
+        // 결합연산자
+        // log(3 + 4);
+        // log("고양" + "이");
+        // log("고양이" + 2 + "마리");
+        // log(2 + "마리");
+        // log(2 + 3 + "마리");
+        // log("고양이" + 2 + 3 + "마리");
+        // log(2 + 3 + "고양이" + 2 + 3 + "마리");
+        // log(1 + 2 + 3 + "고" + 1 + 2 + "양이" + 2 + 3 + "마리" + 1 + 2);
+        // let a = 1;
+        // let b = a++;
+        // log(1 + ++a + b++ + "고" + a + b++ + "양이" + a + b + "마리");
+
+        // let num1 = 2;
+        // let num2 = 3;
+        // log(`고양이 ${num1+num2}마리`);
+        // log("고양이" + (num1 + num2) + "마리");
+        
+        // let a = 1;
+        // let b = a++;
+        // log(++a + (a + ++b) + b++ + "고양이" + (++a + b++) + "마리");
+
+        // 비교연산자
+        // let a = 20;
+        // let b = 10;
+        // let c = '10';
+        // log(a > b);
+        // log(b > c);
+        // log(b >= c);
+        // log(b == c);
+        // log(b === c);
+        // log(b != c);
+        // log(b !== c);
+        // log(a >= c);
+        // log(a > ++c + c++);
+        // log(a > c++);
+        // log(a > c++);
+        // log(a > c++);
+        // log(a > c++);
+        // log(a > c++);
+        // log(a > c++);
+        // log(a > c++);
+        // log(a > c++);
+        // log(a > c++);
+        // log(a > c++);
+        // log("고양이" == "마리");
+
+        // 논리연산자
+        // let id = "main";
+        // let pw = "1234";
+
+        // let userId = "main";
+        // let userPw = "1234";
+
+        // let result = (id === userId) && (pw === userPw);
+        // log(result);
+
+        // log(id === "main" && pw === "6879");
+        // log(id === "main" || pw === "6789");
+        // log(!(id === "main" && pw === "6789"));
+        // log(!(id === "main" || pw === "6789"));
+
+        // let Id = "main";
+        // let Pw = "a1234"
+        // let userId2 = prompt("아이디를 입력하세요");
+        // let userPw2 = prompt("패스워드를 입력하세요");
+        // let result2 = (Id === userId2) && (Pw === userPw2);
+        // log("로그인결과는 : ", result2);
+
+        // let classA = prompt('소프트웨어 설계 점수');
+        // let classB = prompt('소프트웨어 개발 점수');
+        // let classC = prompt('프로그램 언어활용 점수');
+        // let classD = prompt('정보시스템 구축관리 점수');
+
+        // // 평균 60 과락 40
+        // let resultA = (Number(classA) >= 40);
+        // let resultB = (Number(classB) >= 40);
+        // let resultC = (Number(classC) >= 40);
+        // let resultD = (Number(classD) >= 40);
+
+        // let total = (Number(classA) + Number(classB) + Number(classC) + Number(classD));
+        // let avg = (total / 4) >= 60;
+
+        // log("합격: ", resultA && resultB &&resultC &&resultD && avg);
+
+        // 문제)
+        // 대출을 받는데 나이가 20세 이상 가능, 자산이 100원 이상은 50원까지 대출가능.
+        // 자산이 200원 이상은 100원까지 대출가능.
+        // prompt 입력은 나이, 자산, 희망대출금액
+        // 대출승인여부 판단 코드를 만드시오.
+        // let age = prompt("나이");
+        // let asset = prompt("자산");
+        // let hLoan = prompt("희망대출금액");
+        // let resultAge = (Number(age) >= 20);
+        // let resultAsset1 = (Number(asset) >= 100);
+        // let resultHLoan1 = (Number(hLoan) <= 50);
+        // let resultAsste2 = (Number(asset) >= 200);
+        // let resustHLoan2 = (Number(hLoan) <= 100);
+
+        // log("대출가능여부: ", resultAge && (resultAsset1 && resultHLoan1) || (resultAsste2 && resustHLoan2));
+
+        let age = parseInt(prompt("나이"));
+        let assets = parseInt(prompt("자산"));
+        let money = parseInt(prompt("희망금액"));
+
+        let loanAge = age >= 20;
+        let loanAssets100Down = assets >= 100;
+        let loanAssets100Up = (assets >= 100) && (assets < 200) && (money <= 50);
+        let loanAssets200Up = (assets >= 200) && (money <= 100);
+
+        let loan = loanAge && loanAssets100Down && (loanAssets100Up || loanAssets200Up);
+        log("대출: ", loan);
+        let loan2 = (loanAge && loanAssets100Down && loanAssets100Up) || (loanAge && loanAssets100Down && loanAssets200Up);        
+        log("대출2: ", loan2);
+    </script>
+</body>
+</html>
