@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문실습</title>
+    <script>
+        function log(...texts){
+            const logDiv = document.getElementById('log');
+            const newLogEntry = document.createElement('div');
+            // 여러 텍스트 인자를 하나의 문자열로 합칩니다.
+            newLogEntry.textContent = texts.join(' ');
+            logDiv.appendChild(newLogEntry);
+        }
+    </script>
+</head>
+<body>
+    <div id="log"></div>
+    <script>
+        // let score = prompt("학점");
+        // if(score >= 90){
+        //     log("A");
+        // }
+        // if(score >= 80 && score < 90){
+        //     log("B")
+        // }
+        // if(70 <= score && score < 80){
+        //     log("C")
+        // }
+        // if(60 <= score && score < 70){
+        //     log("D")
+        // }
+        // if(50 <= score && score < 60){
+        //     log("E")
+        // }
+        // if(40 <= score && score < 50){
+        //     log("F")
+        // }
+        // log("종료");
+
+        // let score = prompt("학점");
+        // if(score > 60){
+        //     log("합격");
+        // }
+        // else{
+        //     log("불합격");
+        // }
+        
+        // let score = 75;// prompt("학점");
+        // if(score >= 90){
+        //     log("A");
+        // }
+        // else{
+        //     if(score >= 80 && score < 90){
+        //         log("B")
+        //     }
+        //     else{
+        //         if(70 <= score && score < 80){
+        //             log("C")
+        //         }
+        //         else{
+        //             if(60 <= score && score < 70){
+        //                 log("D")
+        //             }
+        //             else{
+        //                 if(50 <= score && score < 60){
+        //                     log("E")
+        //                 }
+        //                 else{
+        //                     if(score < 50){
+        //                         log("F")
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+
+        // let score = 75;// prompt("학점");
+        // if(score >= 90){
+        //     log("A");
+        // }
+        // else{
+        //     if(score >= 80){
+        //         log("B")
+        //     }
+        //     else{
+        //         if(70 <= score){
+        //             log("C")
+        //         }
+        //         else{
+        //             if(60 <= score){
+        //                 log("D")
+        //             }
+        //             else{
+        //                 if(50 <= score){
+        //                     log("E")
+        //                 }
+        //                 else{
+        //                     if(score < 50){
+        //                         log("F")
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+
+        // let score = 85;
+        // if(score >= 90){
+        //     log("A");
+        // }
+        // else if (score >= 80){
+        //     log("B");
+        // }
+        // else if (score >= 70){
+        //     log("C");
+        // }
+        // else if (score >= 60){
+        //     log("D");
+        // }
+        // else if (score >= 50){
+        //     log("E");
+        // }
+        // else if (score >= 40){
+        //     log("F");
+        // }
+
+        // let num = 5;
+        // if(num < 10){
+        //     document.write("num은 10보다 작아요");
+        // }
+
+        // let num2 = prompt("숫자를 입력하세요");
+        // if(num2 < 10){
+        //     log("num은 10보다 작아요");
+        // }
+
+        let num01 = 5;
+        let num02 = 1;
+        let num03 = 10;
+        let min;
+        if(num01 < num02){
+            min = num01;
+        }
+        else{
+            min = num02;
+        }
+        log(min)
+        if(min > num03){
+            min = num03;
+        }
+        log(min)
+    </script>
+</body>
+</html>

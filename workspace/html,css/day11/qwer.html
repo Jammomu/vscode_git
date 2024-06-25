@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 3, 6, 9가 포함된 개수를 세는 함수
+function count369(number) {
+    let count = 0;
+    while (number > 0) {
+        let digit = number % 10;
+        if (digit === 3 || digit === 6 || digit === 9) {
+            count++;
+        }
+        number = Math.floor(number / 10);
+    }
+    return count;
+}
+
+// 박수를 쳐야 할 사람을 결정하는 함수
+function whoClaps(players, position) {
+    for (let i = 1; i <= position; i++) {
+        if (count369(i) > 0) {
+            let clapper = players[(i - 1) % players.length];
+            if (i === position) {
+                return clapper;
+            }
+        }
+    }
+    return null; // 해당 위치에 박수를 쳐야 할 사람을 찾지 못한 경우
+}
+
+// 참여하는 선수들
+let players = ["철수", "영희", "만수", "숙희"];
+
+// 1234번째로 박수를 치는 사람 찾기
+let position = 1234;
+let clapper = whoClaps(players, position);
+if (clapper !== null) {
+    console.log(`${position}번째로 박수를 치는 사람은 ${clapper}입니다.`);
+} else {
+    console.log(`해당 위치에 박수를 쳐야 할 사람을 찾지 못했습니다.`);
+}
+    </script>
+</body>
+</html>

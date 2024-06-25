@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택문실습</title>
+    <script>
+        function log(...texts){
+            const logDiv = document.getElementById('log');
+            const newLogEntry = document.createElement('div');
+            // 여러 텍스트 인자를 하나의 문자열로 합칩니다.
+            newLogEntry.textContent = texts.join(' ');
+            logDiv.appendChild(newLogEntry);
+        }
+    </script>
+</head>
+<body>
+    <div id="log"></div>
+    <script>
+        let score = 95;
+        switch(parseInt(score / 10)){
+            case 10:
+            case 9: log("A학점"); break;
+            case 8: log("B학점"); break;
+            case 7: log("C학점"); break;
+            case 6: log("D학점"); break;
+            case 5: log("E학점"); break;
+            default: log("F학점"); break;
+        }
+
+        let classRoom = prompt("학년을 입력하세요", "1학년: 1, 2학년: 2, 3학년: 3, 기타: 4");
+        switch(classRoom){
+            case "1":{document.write("2층으로 가세요.");} break;
+            case "2":{document.write("3층으로 가세요.");} break;
+            case "3":{document.write("별관으로 가세요.");} break;
+            default :{document.write("1층 안내실로 가세요.");}
+        }
+    </script>
+</body>
+</html>

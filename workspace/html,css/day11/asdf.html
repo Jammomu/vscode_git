@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function find1234thClap() {
+    // 초기화
+    let claps = []; // 박수를 치는 숫자들을 저장할 배열
+    let people = ['철수', '영희', '만수', '숙희'];
+    let counts = [0, 0, 0, 0]; // 각 사람이 몇 번째 박수를 치는지 카운트할 배열
+
+    // 각 사람의 박수 패턴을 반복하면서 숫자를 확인
+    let num = 1;
+    while (claps.length < 1234) {
+        if (num.toString().includes('3') || num.toString().includes('6') || num.toString().includes('9')) {
+            claps.push(num);
+
+            if (num.toString().includes('3')) counts[0]++;
+            if (num.toString().includes('6')) counts[1]++;
+            if (num.toString().includes('9')) counts[2]++;
+            if ((num.toString().includes('3') && num.toString().includes('6')) || 
+                (num.toString().includes('3') && num.toString().includes('9')) || 
+                (num.toString().includes('6') && num.toString().includes('9'))) {
+                claps.push(num);
+            }
+        }
+
+        num++;
+    }
+
+    // 1234번째 박수를 치는 사람을 결정
+    let index = 1234 - 1;
+    let personIndex = index % 4;
+
+    return people[personIndex];
+}
+
+// 결과 출력
+console.log(find1234thClap());
+
+    </script>
+</body>
+</html>
