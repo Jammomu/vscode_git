@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문</title>
+    <style>
+        div{
+            font-family: 'd2coding';
+            white-space: pre; /* 연속된 공백과 줄바꿈을 그대로 표시 */
+        }
+    </style>
+    <script>
+        function log(...texts){
+            const logDiv = document.getElementById('log');
+            const newLogEntry = document.createElement('div');
+            // 여러 텍스트 인자를 하나의 문자열로 합칩니다.
+            newLogEntry.textContent = texts.join(' ');
+            logDiv.appendChild(newLogEntry);
+        }
+    </script>
+</head>
+<body>
+    <div id="log"></div>
+    <script>
+        // for(let i = 1; i < 3; i++){
+        //     log(i);
+        // }
+        // log("finish");
+
+        // let sum = 0;
+        // for(let i = 1; i <= 10; i++){
+        //     sum += i;
+        // }
+        // log(sum);
+        
+        // ==================================================================
+
+        // 은행에 100만원 적금 월이자(복리) 1%라면 12개월 뒤 얼마인가?
+        // let money = 1000000;
+        // for(let month = 1; month <= 12; month++){
+        //     log(money);
+        //     money *= 1.01;
+        // }
+        // log(money);
+
+        // 구구단
+        // for(let idan = 2; idan <= 9; idan++){
+        //     for(let n = 2; n <= 9; n++){
+        //         log(idan, " * ", n, "= ", idan*n);
+        //     }
+        // }
+
+        // ==================================================================
+
+        // *
+        // **
+        // ***
+        // ****
+        // *****
+        // for(let line = 0; line < 5; line++){
+        //     let strStar = "";
+        //     for(let star = 0; star <= line; star++){
+        //         strStar += "*";
+        //     }
+        //     log(strStar);
+        // }
+
+        // let strStar = "";
+        // for(let line = 0; line < 5; line++){
+        //     strStar += "*";
+        //     log(strStar);
+        // }
+
+        // *****
+        // ****
+        // ***
+        // **
+        // *
+        // for(let line2 = 0; line2 < 5; line2++){
+        //     let strStar2 = "";
+        //     for(let star2 = 5; star2 > line2; star2--){
+        //         strStar2 += "*";
+        //     }
+        //     log(strStar2);
+        // }
+
+        //     *
+        //    **
+        //   ***
+        //  ****
+        // *****
+        // for(let line3 = 0; line3 < 5; line3++){
+        //     let strStar3 = "";
+        //     for(blank = 4; blank > line3; blank--){
+        //         strStar3 += " ";
+        //     }
+        //     for(let star3 = 0; star3 < line3; star3++){
+        //         strStar3 += "*";
+        //     }
+        //     log(strStar3);
+        // }
+        
+        // ==================================================================
+
+        // let num = 1;
+        // let sum = 0;
+        // while(num <= 10){
+        //     sum += num;
+        //     num++;
+        // }
+        // log(sum);
+
+        // // while을 이용한 은행 100만원
+        // let money = 1000000;
+        // let month = 1;
+        // while(month <= 12){
+        //     log(money);
+        //     money *= 1.01;
+        //     month++;
+        // }
+        // log(money);
+
+        // ==================================================================
+
+        // for(let i = 2; i <= 10; i += 2){
+        //     log(i);
+        // }
+
+        // for(let i = 1; i <= 10; i++){
+        //     if(i % 2 == 1){
+        //         continue;
+        //     }
+        //     log(i);
+        // }
+
+        // for(let i = 1; i <= 10; i++){
+        //     if(i % 3 == 0){
+        //         continue;
+        //     }
+        //     log(i);
+        // }
+
+        // for(let i = 1; i <= 10; i++){
+        //     if(i % 3 != 0){
+        //         log(i);
+        //     }
+        // }
+
+        // 구구단
+        // for(let dan = 2; dan <= 9; dan++){
+        //     for(let n = 2; n <= 9; n++){
+        //         log(dan, "*", n, "=", dan*n);
+        //     }
+        // }
+
+        // let dan = 2;
+        // for(let n = 2; n <= 9 && dan <= 9; n++){
+        //     log(dan, "*", n, "=", dan*n);
+        //     if(n >= 9){
+        //         dan++;
+        //         n = 2;
+        //     }
+        // }
+
+        // for(let i = 0; i < 81; i++){
+        //     let dan = parseInt(i / 9) + 1;
+        //     let n = i / 9 + 1;
+        //     log(dan, "*", n, "=", dan*n);
+        // }
+
+        // 세자릿수 i가 있을때 1의 자리 + 10의 자리 + 100의 자릿수의 결과를 구하라.
+        // for(let i = 100; i <= 999; i++){
+        //     let n1 = (i % 10);
+        //     let n2 = parseInt((i / 10) % 10);
+        //     let n3 = parseInt((i / 100) % 10);
+        //     log(i, n1 + n2 + n3);
+        // }
+
+        // let num = 1234;
+        // sum = num % 10;
+        // while(true){
+        //     num = parseInt(num / 10);
+        //     sum += num % 10;
+        //     if(num < 10){
+        //         break;
+        //     }
+        // }
+        // log(sum);
+
+        let i = 9223372036854775807;
+        num = i * 10;
+        let count = 0;
+        while(true){
+            num = parseInt(num / 10);
+            if((num % 10) == 3 || (num % 10) == 6 || (num % 10) == 9){
+                count++;
+            }
+            if(num < 10){
+                break;
+            }
+        }
+        log(count);
+    </script>
+</body>
+</html>
