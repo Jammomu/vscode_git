@@ -188,19 +188,42 @@
         // }
         // log(sum);
 
-        let i = 1234;
-        num = i * 10;
-        let count = 0;
-        while(true){
-            num = parseInt(num / 10);
-            if((num % 10) == 3 || (num % 10) == 6 || (num % 10) == 9){
-                count++;
+        // 변수 i 에서 3, 6, 9가 들어간 횟수는 몇 번인가?
+        // let i = 1234;
+        // num = i * 10;
+        // let count = 0;
+        // while(true){
+        //     num = parseInt(num / 10);
+        //     if((num % 10) == 3 || (num % 10) == 6 || (num % 10) == 9){
+        //         count++;
+        //     }
+        //     if(num < 10){
+        //         break;
+        //     }
+        // }
+        // log(count);
+
+        // 철수, 영희, 만수, 숙희가 369게임을 했다.
+        // 이때 1234번째 박수를 치는 사람은 누구인가?
+        let total_clap = 0;
+        let stop = 1234;
+        for(let i = 1; i<2000; i++){
+            num = i * 10;
+            let count = 0;
+            while(true){
+                num = parseInt(num / 10);
+                if((num % 10)==3 || (num % 10)==6 || (num % 10)==9 ){count++;}
+                if(num<10){
+                    break;
+                }
             }
-            if(num < 10){
+            total_clap += count;
+            log(i,"번째", i%4 ,"번 선수가 박수:", count ,"누적박수:",total_clap);
+            if(total_clap >= stop){
+                log(i%4,"번 선수가", stop,"번째 박수를 쳤습니다.");
                 break;
             }
         }
-        log(count);
     </script>
 </body>
 </html>
