@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function writeln(...str){
+            document.write(...str, "<br>");
+        }
+    </script>
+</head>
+<body>
+    <script>
+        // 날짜객체 p.162
+        // let today = new Date();
+        // document.write(today, "<br>");
+        // document.write("요일", today.getDay(), "<br>");
+        //  0  1  2  3  4  5  6
+        // 일 월 화 수 목 금 토
+
+        // document.write("시간: ", today.getHours(), "<br>");
+        // document.write("년: ", today.getFullYear(), "<br>");
+        // document.write("월: ", today.getMonth(), "<br>");
+        // document.write("일: ", today.getDate(), "<br>");
+        // document.write("초: ", today.getTime(), "<br>");
+
+        // let day1 = new Date("2024, 6, 27 14:00:00");
+        // let day2 = new Date("2024, 6, 27 14:00:01");
+        // let diff = day2 - day1;
+        // document.write(diff);
+        
+        // let day1 = new Date("2024, 6, 27 14:00:00");
+        // let day2 = new Date("2024, 6, 27 15:02:03");
+        // let diff = day2 - day1;
+        // let toDiff = day2 - day1
+        // document.write(diff, "<br>");
+        // document.write(
+        //     `
+        //     ${Math.floor(toDiff % (1000 * 60 * 60 * 24) / (1000 * 60 * 60))} 시
+        //     ${Math.floor(toDiff % (1000 * 60 * 60) / (1000 * 60))} 분
+        //     ${Math.floor(toDiff % (1000 * 60) / (1000))} 초
+        //     `
+        // )
+
+        // --------------------------------------------------------------------
+        // 수학객체 p.168
+        // document.write("절대값: ", Math.abs(-23), "<br>"); // 절대값 -> 23
+        // document.write("지수, 승수: ", Math.pow(2, 3), "<br>"); // 지수, tmdtn -> 8
+        // document.write("제곱근: ", Math.sqrt(2), "<br>"); // 제곱근
+        // document.write("올림: ", Math.ceil(2.3), "<br>"); // 올림
+        // document.write("반올림: ", Math.round(2.3), "<br>"); // 반올림
+        // document.write("내림: ", Math.floor(2.3), "<br>"); // 내림
+        // document.write("큰값", Math.max(2, 3), "<br>"); // 큰값
+        // document.write("작은값", Math.min(2, 3), "<br>"); // 작은값
+        // document.write("랜덤", Math.random(), "<br>"); // 랜덤
+
+        // 주사위
+        // let dice = Math.floor(Math.random() * 6) + 1;
+        // document.write("주사위: ", dice);
+
+        // for(i = 0; i < 100; i++){
+        //     let dice = Math.floor(Math.random() * 8) + 10;
+        //     document.write("주사위: ", dice, "<br>");
+        // }
+
+        // --------------------------------------------------------------------
+        // 배열 p.126
+        // let pen =  new Array(5);
+        // pen[0] = "red";
+        // pen[1] = "green";
+        // pen[2] = "blue";
+        // pen[3] = "orange";
+        // pen[4] = "yellow";
+
+        // let room = new Array();
+        // room = ["red", "green", "blue", "orange"];
+        // writeln(room);
+
+        // let str = new Array("red", "green", "blue", "orange");
+        // writeln(str);
+
+        // str[2] = "pink";
+        // writeln(str);
+
+        // let num = new Array("pen", 5, false, 456, "설악산");
+        // writeln(num);
+        // writeln(num.length);
+
+        // let all = str.concat(num);
+        // writeln(all);
+
+        // pens = ["red", "green", "blue", "orange"];
+        // writeln("기존의 배열: ", pens);
+        // pens.reverse();
+        // writeln("변경된 배열: ", pens);
+
+        // pens.shift();
+        // pens.unshift("pink", "brown");
+
+        // pens.pop();
+        // pens.push("pink", "sky");
+
+        // pens.splice(1);
+        // pens.splice(1, 2);
+        // pens.splice(1, 2, "apple", "number");
+
+        // let newPens = pens.slice();
+        // let newPens = pens.slice(1, 3);
+        // writeln(newPens);
+        // let result = pens.indexOf("blue");
+        // writeln(result);
+        // writeln(pens.join());
+        // writeln(pens.join("/"));
+
+        // let pens = ["red", "green", "blue", "orange"];
+        // writeln(pens.sort());
+        // let arr = new Array(1, 2, 3, 4, 11, "11", 1111, 123, "124", 11111);
+        // writeln(arr.sort());
+
+        // 올림차순
+        // const arr = [2, 1, 3, 10];
+        // arr.sort(function(a, b){
+        //     return a - b;
+        // });
+        // writeln(arr);
+
+        // 내림차순
+        // const arr = [2, 1, 3, 10];
+        // arr.sort(function(a, b){
+        //     return b - a;
+        // });
+        // document.writeln(arr + "<br>");
+
+        // 문자열 정렬
+        // const arr = ["banana", "b", "boy"];
+        // 문자열 올림차순
+        // arr.sort();
+        // document.writeln(arr + "<br>");
+        // 문자열 내림차순
+        // arr.sort(function(a, b){
+        //     if(a < b) return 1;
+        //     if(a > b) return -1;
+        //     if(a === b) return 0;
+        // });
+        // document.writeln(arr + "<br>");
+
+        // forEach()는 콜백함수로 주어진 함수를 배열 아이템 각각 함수를 실행
+        // let num = ["people", "dog", "cat", "rabbit"];
+        // num.forEach(function(item, index, array){
+        //     document.write(
+        //         `<p>
+        //             ${index} : ${item}입니다.
+        //             </p>`
+        //     )
+        // });
+
+        // map() 매소드
+        // let num = [1, 2, 3, 4, 5];
+        // let str = num.map(function(item, index, array){
+        //     document.write(
+        //         `<p> ${item}</p>`
+        //     )
+        //     return item * 3
+        // });
+
+        // filter() 매소드
+        // let num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        // let two = num.filter(function(item, index){
+        //     return index % 2 === 0
+        // })
+        // writeln(two)
+        // two.forEach(function(item){
+        //     document.write(item, "입니다.<br>")
+        // });
+
+        // reduce() 매소드
+        // let num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        // let sum = num.reduce((hap, item, index) => {
+        //     return hap + (item * 2)
+        // }, 0)
+        // writeln(sum);
+
+        // for...in문
+        // let cars = ["red", "blue", "green", "violet"];
+        // for(let i of cars){
+        //     document.write(`<p>${i}입니다.</p>`)
+        // }
+
+        // for...of 명령문
+        // let cars = ["red", "blue", "green", "violet"];
+        // for(let i of cars){
+        //     document.write(`<p>${i}입니다.</p>`)
+        // }
+
+        // let str = "boo";
+        // for(let i of str){
+        //     writeln(i);
+        // }
+
+        // --------------------------------------------------------------------
+        // 배열 실습
+        // pen.unshift("sky");
+
+        // writeln(pen.length);
+        // writeln(pen[2]);
+        // writeln("--------");
+        // for(let i = 0; i < pen.length; i++){
+        //     writeln(pen[i]);
+        // }
+
+        // let stars = new Array();
+        // stars.push("박지성");
+        // stars.push("윤지현");
+        // stars.unshift("김윤지");
+        // // stars.shift();
+        // // stars.pop();
+        // stars.push("아이유");
+        // stars.push("현빈");
+        // stars.push("강호동");
+
+        // for(let i = 0; i < stars.length; i++){
+        //     writeln(i, stars[i]);
+        // }
+        // strbuffer = stars.join("&");
+        // writeln(strbuffer);
+        // stars.sort(function(b, a){
+        //     if(a > b){
+        //         return 1;
+        //     } else if(a < b){
+        //         return -1;
+        //     } else{
+        //         return 0;
+        //     }
+        // });
+        // stars.sort((b, a) => a > b ? 1 : (a < b ? -1 : 0));
+        // stars.reverse();
+        // for(let i = 0; i < stars.length; i++){
+        //     writeln(i, stars[i]);
+        // }
+
+        // writeln("--------");
+
+        // superStars = stars.slice(0, 2);
+
+        // for(let i = 0; i < superStars.length; i++){
+        //     writeln(i, superStars[i]);
+        // }
+
+        // stars.forEach(
+        //     function(item, index, array){
+        //         if(index % 2 == 1){
+        //             writeln(index, item);
+        //         }
+        //     }
+        // )
+
+        // let idx = 0;
+        // for(item of stars){
+        //     writeln(idx++, item);
+        // }
+
+        // --------------------------------------------------------------------
+
+        // 로또
+        for(i = 0; i < 6; i++){
+            let lotto = Math.floor(Math.random() * 45) + 1;
+            
+            document.write(lotto, " / ");
+        }
+    </script>
+</body>
+</html>

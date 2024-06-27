@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+    <style>
+        div{
+            font-family: 'd2coding';
+            white-space: pre; /* 연속된 공백과 줄바꿈을 그대로 표시 */
+        }
+    </style>
+    <script>
+        function log(...texts){
+            const logDiv = document.getElementById('log');
+            const newLogEntry = document.createElement('div');
+            // 여러 텍스트 인자를 하나의 문자열로 합칩니다.
+            newLogEntry.textContent = texts.join(' ');
+            logDiv.appendChild(newLogEntry);
+        }
+    </script>
+</head>
+<body>
+    <script>
+        // 함수의 기본 정의 p.102
+        // function addNum(num1, num2){
+        //     let sum = num1 + num2;
+        //     return sum;
+        // }
+        // let sum1 = addNum(1, 2);
+        // document.writeln(sum1, "<br>");
+        // document.write(addNum(3, 4), "<br>");
+
+        // function writeSum(num1, num2){
+        //     document.write(num1 + num2);
+        // }
+        // writeSum(3, 4)
+
+        // --------------------------------------------------------------------
+        // 구구단
+        // function displayDan(dan){
+        //     for(let n=2; n<10; n++){
+        //         document.write(dan, "*", n, "=", dan*n, "<br>");
+        //     }
+        // }
+        // for(let dan=2; dan<10; dan++){
+        //     displayDan(dan);
+        // }
+
+        // --------------------------------------------------------------------
+        // 별찍기
+        // function writeBlank(count){
+        //     for(let i = 0; i < count; i++){
+        //         document.write("&nbsp;");
+        //     }
+        // }
+        // function writeStar(count){
+        //     for(let i = 0; i < count; i++){
+        //         document.write("*");
+        //     }
+        // }
+
+        // for(let n=4, s=1; n>=0 && s<6; n--, s++){
+        //     writeBlank(n); writeStar(s); document.write("<br>");
+        // }
+
+        // writeBlank(4); writeStar(1); document.write("<br>");
+        // writeBlank(3); writeStar(2); document.write("<br>");
+        // writeBlank(2); writeStar(3); document.write("<br>");
+        // writeBlank(1); writeStar(4); document.write("<br>");
+        // writeBlank(0); writeStar(5); document.write("<br>");
+
+        // function blank(count){
+        //     for(let i = 0; i < count; i++){
+        //         document.write("&nbsp;");
+        //     }
+        // }
+        // function star(count){
+        //     for(let i = 0; i < count; i++){
+        //         document.write("*");
+        //     }
+        // }
+
+        // star(4); blank(2); star(1); document.write("<br>");
+        // blank(1); star(3); blank(1); star(2); document.write("<br>");
+        // blank(2); star(5); document.write("<br>");
+        // star(7); document.write("<br>");
+        // star(5); blank(2); document.write("<br>");
+        // star(2); blank(2); star(3); blank(1); document.write("<br>");
+        // star(1); blank(3); star(4); document.write("<br>");
+
+        function writeBlank(count){
+            for(let i = 0; i<count; i++){
+                document.write("&nbsp;");
+            }
+        }
+        function writeStar(count){
+            for(let i = 0; i<count; i++){
+                document.write("*");
+            }
+        }
+        let sumCount = 21;
+        for(let row = 0; row<sumCount; row++){
+            let col = 0;
+            if(row != parseInt(sumCount/2))
+            {
+                row<parseInt(sumCount/2) ? writeBlank(row) : writeStar(parseInt(sumCount/2)-(row-parseInt(sumCount/2+1)));
+                row<parseInt(sumCount/2) ? writeStar(parseInt(sumCount/2)-row) : writeBlank(row-parseInt(sumCount/2+1));
+                writeStar(col = 1);
+                row<parseInt(sumCount/2) ? writeBlank(parseInt(sumCount/2)-(row+1)) : writeStar(row-parseInt(sumCount/2));
+                row<parseInt(sumCount/2) ? writeStar(row+1) : writeBlank(parseInt(sumCount/2)-(row-parseInt(sumCount/2)));
+            }
+            else writeStar(sumCount);
+            document.write("<br>");
+        }
+
+        // --------------------------------------------------------------------
+        // function line(str, n){
+        //     for(i = 1; i <= n; i++){
+        //         document.write(str);
+        //     }
+        //     document.write("<br>");
+        // }
+
+        // line("*", 5);
+        // line("@", 1);
+        // line("#", 10);
+
+        // --------------------------------------------------------------------
+        // function add(num1, num2){
+        //     let sum = num1 + num2;
+        //     document.write(sum + "<br>");
+        // }
+        // add(2, 3);
+        // add(45, 3463);
+        // add(123456, 876543);
+
+        // --------------------------------------------------------------------
+        // 매개변수와 return문 p.105
+        // function gift(sport){
+        //     switch(sport){
+        //         case "축구":
+        //             alert("박지성 사인볼에 당첨되셨습니다.");break;
+        //         case "야구":
+        //             alert("류현진 사인볼에 당첨되셨습니다.");break;
+        //         case "농구":
+        //             alert("마이클조던 사인 티셔츠에 당첨되셨습니다.");break;
+        //         default:
+        //             alert("꽝");break;
+        //     }
+        // }
+        
+        // --------------------------------------------------------------------
+        // 매개변수와 return문
+        // function flower(flowerName){
+        //     switch(flowerName){
+        //         case "무궁화": alert("무궁화 동호회를 추천합니다.");
+        //         break;
+        //         case "장미": alert("장미 동호회를 추천합니다.");
+        //         break;
+        //         case "국화": alert("국화 동호회를 추천합니다.");
+        //     }
+        // }
+        
+        // --------------------------------------------------------------------
+        // let first = 13;
+        // let last = 7;
+        // let result = all(first, last);
+        // document.write(result);
+        // function all(a, b){
+        //     let sam = a + b;
+        //     return sam;
+        // }
+        
+        // --------------------------------------------------------------------
+        // 전역변수와 지역변수 p.110
+        // let num = 1;
+        // function love(){
+        //     let a = num + 1;
+        //     document.write(a);
+        // }
+        // love(3);
+        // document.write("<br>", num);
+        
+        // --------------------------------------------------------------------
+        // let num = 1;
+        // function love(){
+        //     a = "산";
+        //     let b = "강";
+        //     document.write("함수내에서 출력 ", a, "<br>");
+        //     document.write("함수내에서 출력 ", b, "<br>");
+        //     return a;
+        // }
+        // love();
+        // document.write(a, "<br>");
+        
+        // --------------------------------------------------------------------
+        // 함수 사용법 p.113
+        // 기명함수
+        // function all(a, b){
+        //     let result;
+        //     result = a > b ? console.log("a > b") : console.log("a < b");
+        //     return result;
+        // }
+        // let first = 13;
+        // let last = 7;
+        
+        // all(first, last);
+        // all(23, 45);
+        // all(1/2, 3/4);
+        
+        // --------------------------------------------------------------------
+        // 익명함수
+        // let all = function(a, b){
+        //     let result;
+        //     result = a > b ? console.log("a > b") : console.log("a < b");
+        //     return result;
+        // }
+        // let first = 13;
+        // let last = 7;
+        
+        // all(first, last);
+        // all(23, 45);
+        // all(1/2, 3/4);
+        
+        // --------------------------------------------------------------------
+        // 즉시함수
+        // let first = 13;
+        // let last = 7;
+        // let all = function(a, b){
+        //     let result;
+        //     a > b ? document.write("a > b") : document.write("a < b");
+        //     result = a > b ? "a > b" : "a < b";
+        //     return result;
+        // }(first, last);
+        // console.log(all);
+        
+        // --------------------------------------------------------------------
+        // 람다식(화살표)함수
+        // const max = (a, b) => a > b ? a : b;
+        // document.write(max(15, 6));
+        // // 위의 람다식을 일반형으로 쓴다면 아래와 같다.
+        // function maxFunc(a, b){
+        //     let result = a > b ? a : b;
+        //     return;
+        // }
+    </script>
+
+    <!-- <button type="button" onclick="gift('축구')">축구</button>
+    <button type="button" onclick="gift('야구')">야구</button>
+    <button type="button" onclick="gift('농구')">농구</button>
+    
+    <button type="button" onclick="flower('무궁화')">무궁화</button>
+    <button type="button" onclick="flower('장미')">장미</button>
+    <button type="button" onclick="flower('국화')">국화</button> -->
+</body>
+</html>
