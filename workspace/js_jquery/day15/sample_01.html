@@ -86,6 +86,7 @@
         // }
 
         // 8차 생성자함수 이용해서 객체만들고 배열로 사용하기
+        // 배열 생성
         let Pictures = new Array();
         // 생성자함수
         function Picture(aTitle, aImgAddr, aArtist, aYear){
@@ -99,7 +100,7 @@
         Pictures.push(new Picture('꿈','../images/pic02.jpg','파블로 피카소','(1932)'));
         Pictures.push(new Picture('무용실','../images/pic03.jpg','에드가 드가','(1871)'));
         Pictures.push(new Picture('피아노치는 소녀들','../images/pic04.jpg','오귀스트 르누아르','(1892)'));
-
+        // 출력
         for(let i = 0; i < 4; i++){
             document.write('<dl><dt>',Pictures[i].title,'</dt><dd><img src="',Pictures[i].imgAddr,'" alt=""></dd><dd>',Pictures[i].artist,'',Pictures[i].year,'</dd></dl>');
         }
