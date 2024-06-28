@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+    <!-- p.154 -->
+    <link rel="stylesheet" href="../css/box.css">
+</head>
+<body>
+    <script>
+        // 01. Class 객체 만들기
+        // class Book{
+        //     constructor(title, author, year){
+        //         this.title = title;
+        //         this.author = author;
+        //         this.year = year;
+        //     }
+        //     show(){
+        //         document.write(`${this.title} : ${this.author} , ${this.year} <br>`);
+        //     }
+        //     show2(){
+        //         document.write(`${this.title} ( ${this.author} ) => ${this.year} <br>`);
+        //     }
+        // }
+
+        // book1 = new Book('노인과 바다', '허밍웨이', 1950);
+        // book1.show();
+        // book2 = new Book('삼국지', '나관중', 900);
+        // book2.show();
+        // book2.show2();
+
+        // 02. Picture 객체를 Class로 만들기
+        // class Picture{
+        //     constructor(aTitle, aImgAddr, aAuthor, aYear){
+        //         this.title = aTitle;
+        //         this.imgAddr = aImgAddr;
+        //         this.author = aAuthor;
+        //         this.year = aYear;
+        //     }
+        //     show(){
+        //         document.write(
+        //             `<dl><dt>${this.title}</dt>
+        //                 <dd><img src="${this.imgAddr}" alt=""></dd>
+        //                 <dd>${this.author}(${this.year})</dd>
+        //                 </dl>`)
+        //     }
+        // }
+        // new Picture('에펠탑의 신랑신부','../images/pic01.jpg','샤갈',1864).show();
+        // new Picture('꿈','../images/pic02.jpg','피카소',1865).show();
+        // new Picture('무용실','../images/pic03.jpg','드가',1866).show();
+        // new Picture('피아노치는 소녀들','../images/pic04.jpg','르누아르',1867).show();
+
+        // let Pictures = new Array();
+        // class Picture{
+        //     constructor(aTitle, aImgAddr, aAuthor, aYear){
+        //         this.title = aTitle;
+        //         this.imgAddr = aImgAddr;
+        //         this.author = aAuthor;
+        //         this.year = aYear;
+        //     }
+        //     show(){
+        //         document.write(
+        //             `<dl><dt>${this.title}</dt>
+        //                 <dd><img src="${this.imgAddr}" alt=""></dd>
+        //                 <dd>${this.author}(${this.year})</dd></dl>`)
+        //     }
+        // }
+        // Pictures.push(new Picture('에펠탑의 신랑신부','../images/pic01.jpg','샤갈',1864));
+        // Pictures.push(new Picture('꿈','../images/pic02.jpg','피카소',1865));
+        // Pictures.push(new Picture('무용실','../images/pic03.jpg','드가',1866));
+        // Pictures.push(new Picture('피아노치는 소녀들','../images/pic04.jpg','르누아르',1867));
+        // for(let i = 0; i < 4; i++){
+        //     document.write('<dl><dt>',Pictures[i].title,'</dt><dd><img src="',Pictures[i].imgAddr,'" alt=""></dd><dd>',Pictures[i].author,'',Pictures[i].year,'</dd></dl>');
+        // }
+
+        // 03. 객체 표현식 p.157
+        // const num = {
+        //     'brand name' : 'MyBrand',
+        //     level : 2,
+        //     'born-year' : 2022,
+        //     isVeryNice : true,
+        //     '1stName' : 'javascript',
+        //     bestCourse : {
+        //         title : '프론트엔드',
+        //         laguage : 'javascript',
+        //         'level num' : 1
+        //     },
+        //     name:[1,2,3,4,5]
+        // }
+        // console.log(num.level)
+        // console.log(num['brand name'])
+        // console.log(num['1stName'])
+        // console.log(num['born' + '-' + 'year'])
+        // console.log(num.bestCourse.title)
+        // console.log(num.bestCourse['level num'])
+        // console.log(num.name[2])
+    </script>
+</body>
+</html>
