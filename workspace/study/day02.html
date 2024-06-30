@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 대입연산자: '='
+        // 복합대입연산자: '+=', '-=', '*=', '/=','%=' 람다식?줄임말?
+        // 산술연산자: '+', '-', '*', '/', '%'
+
+        // let a = 10;
+        // let b = 8;
+        // document.write(a += b, '<br>'); // a=10 b=8 => a=18 b=8
+        // document.write(b -= a, '<br>'); // a=18 b=8 => a=18 b=-10
+        // document.write(a *= b, '<br>'); // a=18 b-10 => a=-180 b=-10
+        // document.write(parseInt(a /= b), '<br>'); // a=-180 b=-10 => a=18 b=-10
+        // document.write(parseInt(a %= b), '<br>'); // a=18 b=-10 => a=8 b=-10
+
+        // 비교연산자
+        // '>', '>=', '<', '<=', '==', '===', '!=', '!=='
+        // a >= b
+
+        // 논리연산자
+        //  &&(and) = 그리고, ||(or) = 또는, !(not) = 해당 논리값을 반대로 출력(not)
+
+        //  0 ~ 100 에서 10 보다 크거나(초과) 30보다 작은(미만) 숫자만 출력
+        // for(let i = 0; i <= 100; i++){
+        //     if(i > 10 && i < 30){
+        //         document.write(i, "<br>");
+        //     }
+        // }
+
+        // 0 ~ 100 에서 10 보다 작거나(미만) 80보다 큰(초과) 숫자만 출력
+        // for(let i = 0; i <= 100; i++){
+        //     if(i < 10 || i > 80){
+        //         document.write(i, '<br>');
+        //     }
+        // }
+
+        // += 의 생략된 부분: a = a + b
+        // -= 의 생략된 부분: a = a - b
+        // *= 의 생략된 부분: a = a * b
+        // /= 의 생략된 부분: a = a / b
+        // %= 의 생략된 부분: a = a % b
+        // 일때 뭐하라고? 계산해서 출력하라고? 풀어쓴걸로?
+        // let num1 = 1;
+        // let num2 = 0;
+        // num1 = num1 + num2;
+        // document.write(num1, '<br>');
+        // num1 = num1 - num2;
+        // document.write(num1, '<br>');
+        // num1 = num1 * num2;
+        // document.write(num1, '<br>');
+        // num1 = num1 / num2;
+        // document.write(num1, '<br>');
+        // num1 = num1 % num2;
+        // document.write(num1, '<br>');
+
+        // 논리 &&, ||, !
+        // && 곱하기 1*1 = 1 = true, 1*0 = 0 = false
+        // || 더하기 1+1 = 2 = true, 1 + 0 = 1 = true
+        // ??? true, false = 껐다 켰다? 스위치? 기계어 2진법이니까 논리를 구분하려면 0 or 1? 껐다=0 켰다=1
+        // true = 1, 10, 101, 111, -1, -10, -101, 2, 3, 4 등 어떻게됬든 어떠한 데이터가 들어있으면 true, false = 0'만'
+        // if(num2){
+        //     document.write(num2);
+        // }
+        // 자유롭다? 데이터 형(type) 변환이 자연스럽게 변한다고? 컴터가 알아서 변환해준다
+        // 문자 + 숫자 + 문자 + 숫자
+        // 숫자도 문자로 형변환 시켜줌
+        // 그래서 10고양이 23마리임
+
+        // 삼항연산자(?)
+        // 조건식 ? 참일떄 실행 : 거짓일때 실행;
+        // let num1 = 1;
+        // let num2 = 5;
+        // num1 > num2 ? document.write('true') : document.write('false');
+        // 실행문 출력문 뭐가달라?
+        // 실행문 > 출력문
+
+        // 제어문
+        // if, for, switch, while
+        // if: 만약에 = 조건문
+        // for: 반복하는거 = 반복문
+        // switch: 뭔가 선택하는거 = 조건문
+        // while: 반복문
+        
+        // 카드
+        let arrCardShape = new Array('♠', '♣', '◇', '♡');
+        let cardNum = 0;
+
+        for(let cardShapeAddr = 0; cardShapeAddr < 4;){
+            
+            cardNum++;
+
+            if(cardNum == 1){
+                document.write(arrCardShape[cardShapeAddr] + 'A', '<br>');
+            }
+            else if(cardNum > 10){
+                if(cardNum == 11){
+                document.write(arrCardShape[cardShapeAddr] + 'J', '<br>');
+                }
+                else if(cardNum == 12){
+                    document.write(arrCardShape[cardShapeAddr] + 'Q', '<br>');
+                }
+                else if(cardNum == 13){
+                    document.write(arrCardShape[cardShapeAddr] + 'K', '<br>');
+                }
+                else{
+                    document.write(arrCardShape[cardShapeAddr] + cardNum, '<br>');
+                }
+            }
+
+            if(cardNum > 12){
+                cardNum = 0;
+                cardShapeAddr++
+            }
+            // if(cardNum <= 12){
+            //     cardNum++
+            // }
+            // else{
+            //     cardNum = 1;
+            //     cardShapeAddr++
+            // }
+        }
+        // 출력문 하나로만 하려해서 문제다
+        // 조건이 잘못됬다. 정확히는 if 안의 조건들 싹다
+        // 마지막줄 Nan이 나오면 출력문 위치조정하는 방법도 있다.
+    </script>
+</body>
+</html>

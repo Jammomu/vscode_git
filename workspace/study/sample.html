@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // for(let i = 0; i <= 100; i++){
+        //     if(10 < i && i < 30){
+        //         document.write('저는 범위안에 속하지 않습니다.','<br>');
+        //     }
+        //     else{
+        //         document.write(i, '<br>');
+        //     }
+        //     // else if(i < 30){
+        //     //     document.write('저는 범위안에 속하지 않습니다.','<br>');
+        //     // }
+        // }
+
+        let cardDeck = new Array();
+        let arrCardShape = new Array('♠', '♣', '◇', '♡');
+        let cardMaxNum = 13;
+
+        // 1 start - 52장의 카드(string)를 for문을 사용하여 Array에 넣고 Array에 들어간 카드 모두 출력하기
+        for (let i = 0; i < arrCardShape.length; i++) {
+
+            for (let j = 0; j < cardMaxNum; j++) {
+                if (j == 0) {
+                    cardDeck.push(`${arrCardShape[i]} Ace`);
+                } else if (j > 9) {
+
+                    switch (j) 
+                    {
+                        case 10:
+                            cardDeck.push(`${arrCardShape[i]} Jack`);
+                            break;
+                        case 11:
+                            cardDeck.push(`${arrCardShape[i]} Queen`);
+                            break;
+                        case 12:
+                            cardDeck.push(`${arrCardShape[i]} King`);
+                            break;
+                    }
+
+                } else {
+                    cardDeck.push(`${arrCardShape[i]}${j+1}`);
+                }
+            }
+        }
+
+        // document.write("카드 더미 수 : ", cardDeck.length, "<br>");
+
+        for (let i = 0; i < cardDeck.length; i++) {
+            document.write(cardDeck[i], "<br>");
+        }
+    </script>
+</body>
+</html>
