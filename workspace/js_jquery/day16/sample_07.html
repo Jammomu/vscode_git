@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            text-align:center;
+            width:500px;
+            margin:0 auto;
+            font:bold 25px/45px '나눔고딕',sans-serif;
+            color:#666;
+        }
+        div > p{
+            display:inline-block;
+        }
+    </style>
+</head>
+<body>
+    <!-- 브라우저 객체(BOM) -->
+    <!-- window 안에 document, screen, location, history, navigator -->
+    <!-- 
+    window 메소드
+    alert(); => 메세지창
+    confirm => yes, no 메세지창
+    prompt(); => 입력창
+    timer(setInterval, clearInterval, setTimeCut, clearTimeCut)
+    스크롤, 윈도우 크기, 위치
+     -->
+
+    <!-- 아날로그 시계 만들기 -->
+    <!-- 무엇이 필요한가?
+     1초마다 이벤트가 발생하는 무언가
+     현재 시간 구하는것 => 시, 분, 초 뽑아내기 및 12/24 => 오전/오후
+     p 태그 객체 접근
+     text 모드 변경하는 무언가
+      -->
+    <div>
+        <p class="num01">현재시간</p>
+        <p class="num02">현재분</p>
+        <p class="num03">현재초</p>
+    </div>
+
+    <script>
+        // p태그 요소 찾기
+        let hEle = document.querySelector(".num01");
+        let mEle = document.querySelector(".num02");
+        let sEle = document.querySelector(".num03");
+
+        // 1초 마다 이벤트 발생
+        function clock(){
+            // 현재 시간 구하기
+            let date = new Date();
+            let hr = date.getHours();
+            let min = date.getMinutes();
+            let sec = date.getSeconds();
+
+            let ampm = "오전";
+            // 24시 기준 => 12시 기준
+            if(hr > 12){
+                hr -= 12;
+                ampm = "오후";
+            }
+            
+            // p태그 text 변화하기
+            hEle.textContent = ampm + (hr > 10 ? hr : "0" + hr) + " : "; 
+            mEle.textContent = (min > 10? min : "0" + min) + " : "; 
+            sEle.textContent = sec > 10? sec : "0" + sec;
+        }
+        clock();
+        setInterval(clock, 1000);
+    </script>
+</body>
+</html>

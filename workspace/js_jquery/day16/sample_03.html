@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        img{max-width:100%;}
+        .picBox {
+            margin: 2em auto;
+            width: 500px;
+        }
+        .picBox figcaption {
+            margin-top: 1em;
+            padding-right: 30%;
+            padding-left: 1em;
+            font-style: italic;}
+    </style>
+</head>
+<body>
+    <figure class="picBox">
+        <img src="./images/earth.jpg" alt="우주에서 본 지구 모습입니다.">
+    </figure>
+
+    <script>
+        // alt 값을 읽어서 이미지 하단에 제목으로 표시하기
+        // picBox 구하기
+        const picBoxEle = document.querySelector(".picBox");
+        // 이미지 태그 요소 구하기
+        const imgEle = document.querySelector(".picBox>img");
+        // 이미지 alt 값 구하기
+        const altString = imgEle.getAttribute("alt");
+        // p 태그 만들기
+        const pEle = document.createElement("p");
+        // p 태그에 이미지 alt 값 text로 적용하기
+        pEle.textContent = altString;
+        // p 태그에 text 속성(style) 추가하기
+        pEle.setAttribute("style", "text-align:center; font-size:30px;");
+        // p 태그를 picBox에 등록하기
+        picBoxEle.appendChild(pEle);
+    </script>
+</body>
+</html>

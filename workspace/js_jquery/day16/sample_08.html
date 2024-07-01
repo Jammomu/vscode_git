@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width: 100px;
+            font: bold 25px/50px Arial;
+            background-color: #f00;
+            color: #fff;
+            text-align: center;
+            border: none;
+        }
+        /* #up{
+            margin-top: 10px;
+            margin-left: 150px;
+        }
+        #down{
+            margin-top: 40px;
+            margin-left: 10px;
+        }
+        #left{
+
+        } */
+
+        #box{
+            position: absolute;
+            left: 400px;
+            top: 400px;
+            width: 50px;
+            height: 50px;
+            z-index: 1;
+            background-color: #00f;
+        }
+    </style>
+</head>
+<body>
+    <!-- play button 생성 -->
+    <button type="button" id="play">Play</button>
+    <!-- stop button 생성 -->
+    <button type="button" id="stop">Stop</button>
+    <!-- box 생성 -->
+    <div id="box"></div>
+
+    <script>
+        const btnPlay = document.querySelector('#play'); // play button 요소 구하기
+        const btnStop = document.querySelector('#stop'); // stop button 요소 구하기
+        let boxEle = document.querySelector('#box'); // box 요소 구하기
+
+        let boxLeft = 0; // 박스의 시작은 왼쪽에서 시작하기 위한 변수
+        function moveBox(){ // 함수로 묶어두기
+            boxLeft += 1; // 박스의 위치 이동 (1씩 이동하겠다)
+            boxEle.style.left = boxLeft + "px";
+        }
+
+        let mvTimer; // 박스의 이동 속도를 위한 변수 초기화
+        function play(){
+            mvTimer = setInterval(moveBox, 50); // box는 50씩 이동
+        }
+
+        function stop(){
+            clearInterval(mvTimer); // move 값 취소
+            // 전역 clearInterval() 메서드는 이전에 setInterval()을 호출하여 생성한 타이머에 의해 반복되는 작업을 취소합니다. 
+            // 만약 제공된 매개변수가 이전에 설정된 작업을 식별하지 못한다면, 이 메서드는 아무 동작도 수행하지 않습니다.
+        }
+
+        // 이벤트 핸들러
+        btnPlay.addEventListener("click", play);
+        // EventTarget 인터페이스의 addEventListener() 메서드는 지정한 유형의 이벤트를 대상이 수신할 때마다 호출할 함수를 설정합니다.
+        // 일반적인 대상은 Element, Document, Window지만, XMLHttpRequest와 같이 이벤트를 지원하는 모든 객체가 대상이 될 수 있습니다.
+        btnStop.addEventListener("click", stop);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지생성하기</title>
+    <style>
+        *{margin:0; padding:0;}
+        img{max-width:100%;}
+        .picBox {
+            margin: 2em auto;
+            width: 500px;
+        }
+        .picBox figcaption {
+            margin-top: 1em;
+            padding-right: 30%;
+            padding-left: 1em;
+            font-style: italic;}
+    </style>
+</head>
+<body>
+    <div>
+        <!-- 기본적인 img 추가 -->
+        <!-- <img src="./images/color_1.png" alt="1번 상자">
+        <img src="./images/color_2.png" alt="2번 상자">
+        <img src="./images/color_3.png" alt="3번 상자">
+        <img src="./images/color_4.png" alt="4번 상자">
+        <img src="./images/color_5.png" alt="5번 상자">
+        <img src="./images/color_6.png" alt="6번 상자"> -->
+    </div>
+
+    <script>
+        // // alt 값을 읽어서 이미지 하단에 제목으로 표시하기
+        // // picBox 구하기
+        // const picBoxEle = document.querySelector(".picBox");
+        // // 이미지 태그 요소 구하기
+        // const imgEle = document.querySelector(".picBox > img");
+        // // 이미지 alt 값 구하기
+        // const altString = imgEle.getAttribute("alt");
+        // // p 태그 만들기
+        // const pEle = document.createElement("p");
+        // // p 태그에 이미지 alt 값 text로 적용하기
+        // pEle.textContent = altString;
+        // // p 태그를 picBox에 등록하기
+        // picBoxEle.appendChild(pEle);
+
+
+        // div 엘리먼트 구하기 : querySelector();
+        const divEle = document.querySelector("div");
+
+        for(let i = 1; i <= 6; i++){
+
+            // 이미지 요소노드 만들기 : createElement();
+            const imgEle = document.createElement("img");
+
+            // 이미지 요소에 속성 추가하기 : setAttribute();
+            imgEle.setAttribute("src", "./images/color_" + i + ".png");
+
+            // div에 이미지 추가하기 : append();
+            divEle.append(imgEle);
+        }
+
+    </script>
+</body>

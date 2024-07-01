@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        window.onload = function(){ // 무명함수 설정
+            // 아래 const aEle를 이곳에 넣으면 아랫단을 실행 후 실행
+        }
+        // 현 위치에 입력할 경우, 위에서 cta가 없기 때문에 찾을 수 없음
+        const aEle = document.querySelector(".cta > a"); // class cta 안에 a 태그 불러오기
+        aEle.textContent = "예약취소";
+    </script> -->
+</head>
+<body>
+    <!-- 이벤트: 사용자의 행동에 반응해서 동작되는 코드 -->
+    <!-- 마우스 클릭(좌,우,스크롤), 키보드 입력(keyDown, keyUp, keyPress), 문서 -->
+
+    <!-- 작동되는 코드: 이벤트핸들러 -->
+
+    <!-- 
+    01. 태그요소 속성 이벤트="핸들러"
+    02. 이벤트 = 무명함수(핸들러) => 작은 프로젝트에서 사용
+    03. addEventListener => 큰 프로젝트에서 사용
+        객체, addEventListener("이벤트", 핸들러)
+    -->
+
+    <div class="cta">
+        <p id="reservation1" onclick="javascript:doclick1();">예약합니다.1</p>
+        <p id="reservation2">예약합니다.2</p>
+        <p id="reservation3">예약합니다.3</p>
+        <section id="no" class="hide">
+            <h3 class="title">Sorry about</h3>
+            <p>By some weird coincidence, all the rooms at Moonwalk Manor are booked out for the date you planned to take your trip. Unfortunately we are unable to provide you with sufficient lodging for your party at this time. Moonwalk Manor is very busy and your satisfaction is our top priority. When you take your first steps in the moon dust, your life will change. We are always at your service. Your satisfaction matters to us.</p>
+        </section>
+    </div>
+
+    <script>
+        // 이벤트와 핸들러 연결 방식1
+        function doclick1(){ // 무명함수 설정
+            alert("예약1"); // 경고 문구 띄우기
+        }
+
+        // 이벤트와 핸들러 연결 방식2
+        // 장점: 간편, 예전 브라우저에서 동작 가능
+        // 단점: 이벤트 1개에 핸들러 1개만 적용가능, 런타임중에 변경불가
+        const btn2 = document.getElementById("reservation2"); // 객체 2번 아이디 얻기
+        btn2.onclick = function(){
+            alert("예약2");
+        }
+
+        btn3.addEventListener("click", function(){ // 핸들러2 적용
+            btn2.textContent = "예약2 버튼이 눌렸습니다.";
+        });
+        
+        // 이벤트와 핸들러 연결 방식3
+        // 장점: 이벤트 1개에 핸들러 여러개 적용가능, 런타임중에 변경가능
+        // 단점: 복잡, 예전브라우저에서 동작불가(IEB)
+        const btn3 = document.getElementById("reservation3"); // 객체 3번 아이디 얻기
+        btn3.addEventListener("click", function(){ // 핸들러1 적용
+            alert("예약3");
+        });
+        
+        btn3.addEventListener("click", function(){ // 핸들러2 적용
+            btn3.textContent = "예약3 버튼이 눌렸습니다.";
+        });
+        
+        // EventTarget 인터페이스의 addEventListener() 메서드는 지정한 유형의 이벤트를 대상이 수신할 때마다 호출할 함수를 설정합니다.
+        // 일반적인 대상은 Element, Document, Window지만, XMLHttpRequest와 같이 이벤트를 지원하는 모든 객체가 대상이 될 수 있습니다.
+    </script>
+</body>
+</html>
