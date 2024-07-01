@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "function2", "function2\function2.vcxproj", "{C3CBFF5F-4B49-4171-A22C-B241339BA067}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pointerTest", "pointerTest\pointerTest.vcxproj", "{65662FD8-E81E-4307-B09F-81E0F5FD6049}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3CBFF5F-4B49-4171-A22C-B241339BA067}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C3CBFF5F-4B49-4171-A22C-B241339BA067}.Debug|Win32.Build.0 = Debug|Win32
+		{C3CBFF5F-4B49-4171-A22C-B241339BA067}.Release|Win32.ActiveCfg = Release|Win32
+		{C3CBFF5F-4B49-4171-A22C-B241339BA067}.Release|Win32.Build.0 = Release|Win32
+		{65662FD8-E81E-4307-B09F-81E0F5FD6049}.Debug|Win32.ActiveCfg = Debug|Win32
+		{65662FD8-E81E-4307-B09F-81E0F5FD6049}.Debug|Win32.Build.0 = Debug|Win32
+		{65662FD8-E81E-4307-B09F-81E0F5FD6049}.Release|Win32.ActiveCfg = Release|Win32
+		{65662FD8-E81E-4307-B09F-81E0F5FD6049}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

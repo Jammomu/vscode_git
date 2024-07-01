@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "malloc", "malloc\malloc.vcxproj", "{BB5CA7B4-FECE-41BC-B516-98B4430D34DF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "arrayTest", "arrayTest\arrayTest.vcxproj", "{AD048739-D35E-4C5D-B3BE-DC005CF30D5C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB5CA7B4-FECE-41BC-B516-98B4430D34DF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BB5CA7B4-FECE-41BC-B516-98B4430D34DF}.Debug|Win32.Build.0 = Debug|Win32
+		{BB5CA7B4-FECE-41BC-B516-98B4430D34DF}.Release|Win32.ActiveCfg = Release|Win32
+		{BB5CA7B4-FECE-41BC-B516-98B4430D34DF}.Release|Win32.Build.0 = Release|Win32
+		{AD048739-D35E-4C5D-B3BE-DC005CF30D5C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AD048739-D35E-4C5D-B3BE-DC005CF30D5C}.Debug|Win32.Build.0 = Debug|Win32
+		{AD048739-D35E-4C5D-B3BE-DC005CF30D5C}.Release|Win32.ActiveCfg = Release|Win32
+		{AD048739-D35E-4C5D-B3BE-DC005CF30D5C}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

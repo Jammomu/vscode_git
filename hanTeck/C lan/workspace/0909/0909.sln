@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "arrayTest2", "arrayTest2\arrayTest2.vcxproj", "{20B8E20A-4E0D-4B3E-AB68-2E804663DFC1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "structTest", "structTest\structTest.vcxproj", "{8241ED1D-6A00-4B92-B505-3F2C3105B895}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20B8E20A-4E0D-4B3E-AB68-2E804663DFC1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{20B8E20A-4E0D-4B3E-AB68-2E804663DFC1}.Debug|Win32.Build.0 = Debug|Win32
+		{20B8E20A-4E0D-4B3E-AB68-2E804663DFC1}.Release|Win32.ActiveCfg = Release|Win32
+		{20B8E20A-4E0D-4B3E-AB68-2E804663DFC1}.Release|Win32.Build.0 = Release|Win32
+		{8241ED1D-6A00-4B92-B505-3F2C3105B895}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8241ED1D-6A00-4B92-B505-3F2C3105B895}.Debug|Win32.Build.0 = Debug|Win32
+		{8241ED1D-6A00-4B92-B505-3F2C3105B895}.Release|Win32.ActiveCfg = Release|Win32
+		{8241ED1D-6A00-4B92-B505-3F2C3105B895}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
