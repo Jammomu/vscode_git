@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js_jquery/day17/js/jquery.js"></script>
+    <style>
+        #control_box{
+            position: relative;
+            width: 150px;
+            height: 150px;
+            border: 1px solid #000;
+        }
+        button{
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            background-color: #f55;
+            color: #fff;
+            text-align: center;
+            border: none;
+        }
+        #left{
+            left: 0px;
+            top: 50px;
+        }
+        #right{
+            left: 100px;
+            top: 50px;
+        }
+        #up{
+            left: 50px;
+            top: 0px;
+        }
+        #down{
+            left: 50px;
+            top: 100px;
+        }
+        #stop{
+            left: 50px;
+            top: 50px;
+        }
+
+        #box{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #55f;
+            left: 300px;
+            top: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!-- box 생성 -->
+    <!-- <div id="box"></div> -->
+
+    <!-- 방향키 생성 -->
+    <!-- <div id="controller">
+        <button id="up"></button>
+        <button id="up"></button>
+        <button id="up"></button>
+        <button id="up"></button>
+    </div> -->
+
+    <script>
+        // box 생성
+        $(function(){
+            const controlBox = $('<div></div>');
+            const moveUp = $('<button>▲</button>');
+            const moveDown = $('<button>▼</button>');
+            const moveLeft = $('<button>◀</button>');
+            const moveRight = $('<button>▶</button>');
+            const moveStop = $('<button>■</button>');
+            const box = $('<div></div>');
+            $('body').append(controlBox);
+            $('body').apeend(box);
+            controlBox.append(moveUp);
+            controlBox.append(moveDown);
+            controlBox.append(moveLeft);
+            controlBox.append(moveRight);
+            controlBox.append(moveStop);
+
+            moveUp.attr();
+        });
+        // 방향키 생성
+        // 컨트롤러 만들기
+        // 버튼 클릭 이벤트 실행시 상, 하, 좌, 우로 움직이기
+        // 스탑 버튼
+    </script>
+</body>
+</html>
