@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery.js"></script>
+</head>
+<body>
+    <button id="btn01">button</button>
+    <div id="container">
+        <nav>
+            <ul class="list">
+                <li id="first">Own</li>
+                <li>Two</li>
+                <li>Three</li>
+            </ul>
+        </nav>
+    </div>
+
+    <button id="btn02">button</button>
+    <ul class="nav1">
+        <li>0</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <button id="btn03">button</button>
+    <ul class="nav2">
+        <li>apple</li>
+        <li>banana</li>
+        <li></li>
+    </ul>
+
+    <button id="btn04">button</button>
+    <div id="container">
+        <ul class="nav3">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+
+        <ul class="nav4">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+
+    <script>
+        // p.238
+        // 연습문제1
+        $('#btn01').click(
+            function(){
+                $('#first').next().css({
+                    'background-color': '#9ab92e',
+                    'color': '#05184d'
+                }
+            );
+        });
+
+        // 연습문제2
+        $('#btn02').click(
+            function(){
+                $('.nav1 > li:not(:nth-child(2))').css({
+                    'background-color': '#9ab92e',
+                    'border': '1px dashed #05184d'
+                });
+            }
+        );
+
+        // 연습문제3
+        $(function(){
+            $('#btn03').click(
+                function(){
+                    $('.nav2 > li:empty').text('orange');
+                });
+        });
+
+        // 연습문제4
+        $(function(){
+            $('#btn04').click(
+                function(){
+                    $('.nav3 > li:lt(2)').css({
+                        backgroundColor: '#9ab92e',
+                        border: '1px dashed #05184d'
+                    });
+                });
+            
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery.js"></script>
+</head>
+<body>
+    <button id="btn01">텍스트 스타일 변경</button>
+    <p class="text">텍스트 텍스트</p>
+    <p style="font-size: 32px;">딱쓰뜨 딱쓰뜨</p>
+
+    <script>
+        $(function(){
+            $('#btn01').click(
+                function(){
+                    $('p.text').css({
+                        // 'background-color'와 같은 속성들을 아래와 같이 카멜 표기법으로 사용 가능
+                        backgroundColor: 'red',
+                        fontSize: '2em',
+                        border: '1px solid green',
+                        fontWeight: 'bolder'
+                    });
+                }
+            );
+        });
+    </script>
+</body>
+</html>

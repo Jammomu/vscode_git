@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery.js"></script>
+    <style>
+        .naver{
+            width: 100px;
+            height: 50px;
+            background-color: #f0f;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn01">클래스 추가</button>
+    <button id="btn02">클래스 제거</button>
+    <button id="btn03">클래스 토글</button>
+
+    <p><a href="https://www.naver.com">네이버</a></p>
+
+    <script>
+        $(function(){
+            $('#btn01').click(
+                function(){
+                    $('p').addClass('naver'); // 선택자에 class 첨가
+                }
+            );
+
+            $('#btn02').click(
+                function(){
+                    $('p').removeClass('naver'); // 선택자에 class 제거
+                }
+            );
+
+            $('#btn03').click(
+                function(){
+                    $('p').toggleClass('naver'); // 선택자에 class 추가 제거 반복
+                }
+            );
+        });
+    </script>
+</body>
+</html>

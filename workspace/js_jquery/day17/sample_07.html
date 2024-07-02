@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery.js"></script>
+</head>
+<body>
+    <p><button id="btn_01">Click Me</button></p>
+    <ul>
+    <li id="first" title="a1a">내용</li>
+    <li class="second" title="bb"> 내용 </li>
+    <li id="third" title="cerc">내용</li>
+    <li class="fourth" title="ded">내용 </li>
+    </ul>
+    
+    <script>
+        $(function(){
+            $('#btn_01').click(
+                function(){
+                    // li 요소 중 title이 a로 시작되는 요소 선택
+                    $('li[title^= "a"]').css('color', 'red');
+
+                    // li 요소 중 title이 bb가 아닌 모든 요소 선택
+                    $('li[title!= "bb"]').css('background-color', 'yellow');
+
+                    // title이 bb이고 class가 s로 시작되는 요소 선택
+                    $('[title= "bb"][class^= "s"]').css('background-color', 'green');
+                }
+            );
+        });
+    </script>
+</body>
+</html>

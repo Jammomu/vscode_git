@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery.js"></script>
+</head>
+<body>
+    <p><button  id="btn">버튼</button></p>
+    <ul id="list1">
+        <li class="a">list1 item a</li>
+        <li class="b">list1 item a</li>
+        <li class="c">list1 item b</li>
+        <li class="d">list1 item b</li>
+    </ul>
+    <p class="num">class a</p>
+    <q>normal 01</q>
+    <p class="b">class b</p>
+    <p>normal 02</p>
+    <em id="first">변경전</em>
+    <p id="second">아무것도 없습니다.</p>
+    <p class="olde"><strong>변경되었습니다.</strong></p>
+
+    <script>
+        $(function(){ // 기본 서식
+            $("#btn").click(function(){ // 버튼 클릭 이벤트 함수
+                $(".a").css("color", "red"); // a클래스에 있는 객체
+                $("#list1").css({ // id list 안에 있는 객체들
+                    "background-color": "yellow",
+                    "list-style": "none"
+                });
+                $('#first').text('변경후'); // id first에 대한 text 변경
+                $('p.num + q').css('background-color', 'green'); // num 클래스 안에 있는 p
+                $('p.num ~ p').css('background-color', 'red'); // num 클래스 안에 있는 모든 p
+            });
+        });
+    </script>
+</body>
+</html>

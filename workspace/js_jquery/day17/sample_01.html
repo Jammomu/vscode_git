@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <script src="./js/jquery.js"></script>
+    <script>
+        window.onload = function(){
+            const divEle = document.getElementById("content");
+            const pEle = document.createElement("p");
+            const text = document.createTextNode("Hellow");
+            pEle.appendChild(text);
+            divEle.appendChild(pEle);
+        }
+    </script>
+    <script>
+        $("document").ready(
+            function(){
+                // let pEle = $("<p>").text("Hellow");
+                // $("#content2").append(pEle);
+                $("#content2").append($("<p>").text("Hellow"));
+            }
+        );
+    </script>
+
+</head>
+<body>
+    <!-- 라이브러리 -->
+    <!-- 라이브러리는 특정 기능을 구현에 필요한 도구와 함수들의 모음.
+    개발자는 필요할 때 라이브러리의 특정 기능을 호출하여 사용.
+    라이브러리는 일반적으로 단일 목적을 가지고 있으며,
+    특정 작업을 쉽게 수정할 수 있도록 도와준다. -->
+
+    <!-- 프레임워크 -->
+    <!-- 어플리케이션 개발의 구조를 제공하는 더 큰 개념.
+    프레임워크느 ㄴ라이브러리보다 더 포괄적이며,
+    개발자가 따르는 일련의 규칙과 관습을 포함한다.
+    프레임워크는 전체 어플리케이션의 흐름을 관리하고 개발자가 특정 부분을 채워넣는 방식으로 동작한다. -->
+    <!-- 프레임워크의 사용이유: 생산성, 공동작업 -->
+    
+    <!-- ------------------------------------------------------------------------ -->
+
+    <h2>자바스크립트방식</h2>
+    <div id="content"></div>
+    <h2>제이쿼리방식</h2>
+    <div id="content2"></div>
+</body>
+</html>

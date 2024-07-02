@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery.js"></script>
+</head>
+<body>
+    <h3>제목2</h3>
+    <header>제목3</header>
+    <button id="btn" type="button">클릭</button>
+    <ol>
+    <li>첫번째 내용 </li>
+    <li>두번째 <span>text</span>내용  </li>
+    <li>세번째 내용  </li>
+    <li></li>
+    <li>네번째 내용<strong>text</strong>내용  </li>
+    <li>다섯번째 <span>text</span>내용<span>text</span>내용</li>
+    <li>여섯번째 내용</li>
+    </ol>
+
+    <script>
+        $(function(){
+            $('#btn').click(function(){
+                // has
+                // 특정 요소 선택
+                $('li:has(span)').css('border', '3px solid red');
+
+                // contains
+                // text를 포함한 요소 선택
+                $('li:contains("세번")').css('border', '3px solid blue');
+
+                // empty
+                // 빈 요소 선택
+                $('li:empty').text('내용없음');
+
+                // parent
+                // 다른 요소를 포함한 요소 선택(빈칸 하나만 들어 있어도 선택)
+
+                // header
+                // 제목 요소 선택
+                $(':header').css('background-color', 'pink'); // h1~6에 해당하는 것들
+
+                // not
+                // 조건에 해당되지 않는 요소만 선택
+                $('li:not(:first-child)').css('background-color', 'green');
+            });
+        });
+    </script>
+</body>
+</html>

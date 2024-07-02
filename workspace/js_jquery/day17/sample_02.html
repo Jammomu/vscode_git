@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery.js"></script>
+</head>
+<body>
+    <button type="button">Sample</button>
+    <div></div>
+    <p></p>
+    <script>
+        $(function(){ // 기본 시작 쿼리
+            $("div").text("Start jQuery");
+            $("button").click(function(e){ // 버튼 클릭 이벤트
+                $("p").text("Welcome").css("color", "red"); // 하나만 쓸 때
+                $("p").text("Welcome").css({ // 여러개 중복해서 쓸 때
+                    "color": "red",
+                    "background-color": "lightgray"
+                });
+            });
+        });
+    </script>
+</body>
+</html>

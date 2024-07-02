@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery.js"></script>
+    <style>
+        section{
+            width:500px; 
+            margin:25px auto; 
+            text-align:center;
+        }
+        div{display:none;}
+    </style>
+</head>
+<body>
+    <section>
+        <p class="btn">
+            <button id="btn01">이미지 가져오기</button>
+            <button id="btn02">링크 변경하기</button>
+        </p>
+
+        <p class="box01">
+            <img src="images/img01.png" alt="sample">
+        </p>
+        <p class="box02">
+            <a href="http://www.naver.com">네이버</a>
+        </p>
+
+        <div>
+            <img src="images/img02.png" alt="sample">
+        </div>
+    </section>
+
+    <script>
+        $(function(){
+            $('#btn01').click(
+                function(){
+                    // img02 문자열 얻어오기
+                    let imgAddr = $('div > img').attr('src');
+                    // alert(imgAddr); // 주소 잘 가져왔는지 확인용
+                    $('.box01 > img').attr('src', imgAddr); // 이미지 주소 변경
+                }
+            );
+
+            $('#btn02').click(
+                function(){
+                    // 주소와 텍스트 변경
+                    $('.box02 > a').attr('href', 'https://www.daum.net').text('다음');
+                }
+            );
+        });
+    </script>
+</body>
+</html>
