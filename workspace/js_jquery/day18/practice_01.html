@@ -21,11 +21,8 @@
 
     <!-- 03 -->
     <section>
-        <p class="btn">
-            <button id="btn03">get image</button>
-        </p>
-        <p class="box01">
-            <img src="images/color_1.png" alt="sample">
+        <p class="btn01">
+            <img src="images/run/1.png" alt="">
         </p>
         <p class="test">1</p>
     </section>
@@ -50,11 +47,17 @@
         // 버튼을 클릭하면 img 요소의 src 속성을 변경한다.
         // 이때 src 속성의 이미지 파일명이 1부터 6까지 버튼이 클릭되면 계속 순차적으로 변경된다.
         // 만약에 6번 파일이 로드되면 다시 1로 이미지가 변경된다.
-            $('#btn03').click(
-                function(){
-
-                }
-            );
+        $(function(){
+            let index = 1;
+            setInterval(function(){
+                $('.btn01 > img').attr('src', 'images/' + 'run/' + ((index % 15) + 1) + '.png');
+                $('.test').text(index);
+                index++;
+                // if(index > 15){
+                //     index = 1;
+                // }
+            }, 50);
+        });
         });
     </script>
 </body>
