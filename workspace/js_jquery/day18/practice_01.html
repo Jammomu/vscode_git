@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    <!-- 01 -->
+    <button id="btn01">button1</button>
+    <div id="container">
+    <p>Hellow</p>
+    </div>
+
+    <!-- 02 -->
+    <button id="btn02">button2</button>
+    <div id="container2">
+    <p>Whats up bro</p>
+    </div>
+
+    <!-- 03 -->
+    <section>
+        <p class="btn">
+            <button id="btn03">get image</button>
+        </p>
+        <p class="box01">
+            <img src="images/color_1.png" alt="sample">
+        </p>
+        <p class="test">1</p>
+    </section>
+
+    <script>
+        $(function(){
+        // 01.----------------------------------------------------------------
+            $('#btn01').click(
+                function(){
+                    $('#container').append('<p>Nice to meet you</p>');
+                }
+            );
+
+        // 02.----------------------------------------------------------------
+            $('#btn02').click(
+                function(){
+                    $('#container2').prepend('<p>Long time no see</p>');
+                }
+            );
+
+        // 03.----------------------------------------------------------------
+        // 버튼을 클릭하면 img 요소의 src 속성을 변경한다.
+        // 이때 src 속성의 이미지 파일명이 1부터 6까지 버튼이 클릭되면 계속 순차적으로 변경된다.
+        // 만약에 6번 파일이 로드되면 다시 1로 이미지가 변경된다.
+            $('#btn03').click(
+                function(){
+
+                }
+            );
+        });
+    </script>
+</body>
+</html>

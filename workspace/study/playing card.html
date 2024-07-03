@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+    </script>
+</head>
+<body>
+    <script>
+        
+        // 트럼프 카드 한벌 만들기
+        // 스페이드 클로버 다이아 하트(♠, ♣, ◇, ♡)(ㅁ->한자) : 4가지 문양
+        // A,2~10,J,Q,K : 13가지 숫자
+        // 1. 52장의 카드(string)를 for문을 사용하여 Array에 넣고 Array에 들어간 카드 모두 출력하기
+        // 2. 카드의 정렬 순서를 섞어서(random) 출력하기
+        // 3. 7장씩 4명에게 분배하고 카드 숫자의 총합이 큰 사람이 우승 -> 카드를 다시 섞고 출력
+        //     Ace 는 11 , King,Queen,Jack은 10으로 계산한다.
+        // 4. 카드를 객체(Object or Class)로 만들어보기(카드숫자, 카드문양, 카드이미지)
+        // 5. 4번에서 만든것을 Array에 넣어서 CardDeck 만들고 이미지와 cardName 출력
+        // 6. 5번에서 만든 것으로 3번 작업
+        // 7. 버튼 이벤트 구현 (카드 셔플 , 카드 게임 시작, 다시시작)
+
+        let cardDeck = new Array();
+        let arrCardShape = new Array('♠', '♣', '◇', '♡');
+        const CARDMAXNUM = 13;
+
+        // 1 start - 52장의 카드(string)를 for문을 사용하여 Array에 넣고 Array에 들어간 카드 모두 출력하기
+        for (let i = 0; i < arrCardShape.length; i++) {
+
+            for (let j = 0; j < CARDMAXNUM; j++) {
+                if (j == 0) {
+                    cardDeck.push(`${arrCardShape[i]} Ace`);
+                } else if (j > 9) {
+                   
+                    switch (j) 
+                    {
+                        case 10:
+                            cardDeck.push(`${arrCardShape[i]} Jack`);
+                            break;
+                        case 11:
+                            cardDeck.push(`${arrCardShape[i]} Queen`);
+                            break;
+                        case 12:
+                            cardDeck.push(`${arrCardShape[i]} King`);
+                            break;
+                    }
+
+                } else {
+                    cardDeck.push(`${arrCardShape[i]}${j+1}`);
+                }
+            }
+        }
+
+        // document.write("카드 더미 수 : ", cardDeck.length, "<br>");
+
+        for (let i = 0; i < cardDeck.length; i++) {
+            document.write(cardDeck[i], "<br>");
+        }
+        // 1 end
+
+        // 2 start - 카드의 정렬 순서를 섞어서(random) 출력하기
+        // 랜덤으로 숫자 뽑기 Math.floor(Math.random()*범위(최대값)%10*(최대값의 최대 자릿수))+범위(최소값)
+        let arrNum = new Array();
+        for (let i = 0, temp = 0; i < cardDeck.length; ) {
+            temp = Math.floor(Math.random() * cardDeck.length % 100); //0~51
+
+            // 숫자 중복 검사
+            for (let j = 0; j < arrNum.length; j++) {
+                let temp2 = 0;
+                arrNum[j] == temp ? temp = null : temp2 = temp;
+
+                if(temp == null){ break; }
+            }
+
+            //처음 뽑은 숫자 또는 중복되지 않은 숫자를 뽑은 경우
+            if (arrNum.length == 0 || temp != null) {
+                arrNum.push(temp);
+                document.write(arrNum[i], "<br>");
+                i++;
+            }
+        }
+
+        //랜덤 숫자 순서대로 카드덱 만들기
+        for(let i = 0, temp = new Array(); i<cardDeck.length; i++){
+            temp.push(cardDeck[arrNum[i]]);
+            if(i+1 == cardDeck.length){ cardDeck = temp; }
+        }
+        
+        //섞인 카드덱 출력
+        for (let i = 0; i < cardDeck.length; i++) {
+            document.write(cardDeck[i], "<br>");
+        }
+
+        // 2 end
+
+        // 3 start - 7장씩 4명에게 분배하고 카드 숫자의 총합이 큰 사람이 우승 -> //카드를 다시 섞고 출력
+
+        const numCard = 7;
+        let arrPersonName = new Array("철수","영희","민수","옥희");
+
+        let arrHaveCards = new Array();
+
+        let arrChulCard = new Array();
+        let arrYoungCard = new Array();
+        let arrMincard = new Array();
+        let arrOkCard = new Array();
+
+
+        for(let i = 0; i<arrPersonName.length*numCard; i++){
+           
+            console.log(i+1,"  ",i%4," Give Card! ",arrPersonName[(i)%4]);
+
+            switch(i%4)
+            {
+                case 0: // 철수
+                    arrChulCard.push(cardDeck[i]);
+                    break;
+                case 1: // 영희
+                    arrYoungCard.push(cardDeck[i]);
+                    break;
+                case 2: // 민수
+                    arrMincard.push(cardDeck[i]);
+                    break;
+                case 3: // 옥희
+                    arrOkCard.push(cardDeck[i]);
+                    break;    
+            }
+
+        }
+
+        arrHaveCards.push(arrChulCard);
+        arrHaveCards.push(arrYoungCard);
+        arrHaveCards.push(arrMincard);
+        arrHaveCards.push(arrOkCard);
+
+        let winnerName = "";
+        let winnerCardSum = 0;
+        for(let i = 0; i<arrPersonName.length; i++)
+        {
+            let tempCardSum = 0;
+
+            document.write(arrPersonName[i]+"의 카드패 <br>");
+            for(let j = 0; j<arrChulCard.length; j++)
+            {
+                let cardNum = arrHaveCards[i][j].substr(1);//string(문자열)자르기 //카드 총합 계산
+                if(cardNum == " Ace") cardNum = 11;
+                else if(cardNum == " Jack" || cardNum == " Queen" || cardNum == " King") cardNum = 10;
+
+                tempCardSum += Number(cardNum);
+
+                document.write(arrHaveCards[i][j]);
+            }
+            console.log(tempCardSum);
+
+            if(i == 0 || winnerCardSum < tempCardSum)
+            { 
+                winnerName = arrPersonName[i];
+                winnerCardSum = tempCardSum;
+            }
+
+            document.write("<br><br>");
+        }
+
+         document.write("<br> Winner! : ",winnerName," WinnerSum : ",winnerCardSum,"<br><br>");
+
+        // 3 end
+
+        // 4,5 start 카드를 객체(Object or Class)로 만들어보기(카드숫자, 카드문양, 카드이미지)
+        class CardDeck{
+
+            
+            m_arrCard = new Array();
+
+
+            constructor(arrCard = null){
+                this._setData(arrCard);
+            }
+
+            _setData(arrCard = null){
+                if(arrCard != null)
+                    this.m_arrCard = arrCard;
+                else
+                    this._createNewCardDeck();
+            }
+
+            showDeck(){
+                for(let i = 0; i<this.m_arrCard.length; i++){
+                    document.write(this.m_arrCard[i].getCardName(),"<br>");
+                }
+            }
+        
+            shuffle(){
+                let arrNum = new Array();
+                for (let i = 0, temp = 0; i < this.m_arrCard.length; ) {
+                    temp = Math.floor(Math.random() * this.m_arrCard.length % 100); //0~51
+
+                    // 숫자 중복 검사
+                    for (let j = 0; j < arrNum.length; j++) {
+                        let temp2 = 0;
+                        arrNum[j] == temp ? temp = null : temp2 = temp;
+
+                        if(temp == null){ break; }
+                    }
+
+                    //처음 뽑은 숫자 또는 중복되지 않은 숫자를 뽑은 경우
+                    if (arrNum.length == 0 || temp != null) {
+                        arrNum.push(temp);
+                        i++;
+                    }
+                }
+
+                for(let i = 0, temp = new Array(); i<this.m_arrCard.length; i++){
+                    temp.push(this.m_arrCard[arrNum[i]]);
+                    if(i+1 == this.m_arrCard.length){ this.m_arrCard = temp; }
+                }
+            }
+
+            // ('♠', '♣', '◇', '♡')
+            _createNewCardDeck(){
+                
+                let arrCardShape = new Array('♠', '♣', '◇', '♡');
+
+                for(let i = 0, j = 0; i < 4; ){
+                    let bStrCard = j == 0 || j > 9;
+                    if(j>12){ j = 0; i++;   continue;}
+                    this.m_arrCard.push(new Card(j,arrCardShape[i],j+1,bStrCard));
+                    j++;
+                }
+            }
+        }
+
+        class Card
+        {
+            m_idNum = 0;
+            m_strShape = "";
+            m_iNumber = 0;
+            m_bStrCard = false;
+            // m_imgCard = ;
+
+
+            constructor(id,strShape,iNum,bStrCard=false){
+                this.m_idNum = id;
+                this.m_strShape = strShape;
+                this.m_iNumber = iNum;
+                this.m_bStrCard = bStrCard;
+            }
+
+            getId(){
+                return m_idNum;
+            }
+
+            getCardName(){
+                return this.m_bStrCard ? this.m_strShape+this._identifyCard() : this.m_strShape+this.m_iNumber;
+            }
+
+            getCardValue(){
+                return m_iNumber;
+            }
+
+            _identifyCard(){
+                if(this.m_iNumber==1 || this.m_iNumber > 10){
+                    switch (this.m_iNumber) 
+                    {
+                        case 1:
+                            return "Ace";
+                        case 11:
+                            return "Jack";
+                        case 12:
+                            return "Queen";
+                        case 13:
+                            return "King";
+                    }
+                }
+            }
+        }
+
+        let deck = new CardDeck();
+        deck.showDeck();
+        deck.shuffle();
+        deck.showDeck();
+
+        // 4,5 end
+    </script>
+</body>
+</html>

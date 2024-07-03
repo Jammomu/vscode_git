@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1. 좌석 예약 시스템:
+   영화관이나 공연장의 좌석 예약 시스템에서 특정 좌석이 예약 가능한지 확인하는 예제입니다. -->
+
+    <script>
+        const seats = [
+            ['A1', 'A2', 'A3', 'A4'],
+            ['B1', 'B2', 'B3', 'B4'],
+            ['C1', 'C2', 'C3', 'C4']
+        ];
+        const reservedSeats = ['A2', 'B3', 'C1'];
+    </script>
+
+    <!-- 2. 학교 성적 관리 시스템:
+   학생들의 성적을 관리하는 시스템에서 특정 과목의 평균 점수를 계산하는 예제입니다. -->
+
+    <script>
+        const students = [
+            { name: 'Alice', scores: { math: 85, english: 78, science: 92 } },
+            { name: 'Bob', scores: { math: 90, english: 82, science: 88 } },
+            { name: 'Charlie', scores: { math: 95, english: 85, science: 91 } }
+        ];
+        const subject = 'math';
+        let totalScore = 0;
+        let count = 0;
+    </script>
+
+    <!-- 3. 도시 간 거리 계산:
+   여러 도시 간의 거리를 저장한 2D 배열에서 특정 두 도시 간의 거리를 찾는 예제입니다. -->
+
+    <script>
+        const cities = ['Seoul', 'Busan', 'Incheon', 'Daegu'];
+        const distances = [
+            [0, 325, 27, 237],  // Seoul
+            [325, 0, 330, 97],  // Busan
+            [27, 330, 0, 264],  // Incheon
+            [237, 97, 264, 0]   // Daegu
+        ];
+        const city1 = 'Seoul';
+        const city2 = 'Busan';
+
+        let distance = -1;
+    </script>
+
+    <!-- 4. 재고 관리 시스템:
+   창고에서 특정 제품의 재고를 확인하는 예제입니다. -->
+
+    <script>
+        const warehouse = [
+            { product: 'Laptop', quantity: 50 },
+            { product: 'Phone', quantity: 100 },
+            { product: 'Tablet', quantity: 30 }
+        ];
+        const targetProduct = 'Phone';
+    </script>
+</body>
+
+</html>

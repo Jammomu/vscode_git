@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <style>
+        p{
+            border: 3px solid #55f;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <button id="btn01">Button1(wrap)</button>
+        <button id="btn02">Button2(wrapAll)</button>
+        <button id="btn03">Button3(wrapInner)</button>
+        <button id="btn04">Button4(unwrap)</button>
+    </p>
+    <div>
+        <p>
+            <strong>Strong text</strong>
+        </p>
+        <strong>Strong text</strong>
+        <em>em text</em>
+        <strong>Strong text</strong>
+        <strong>Strong text</strong>
+    </div>
+
+    <script>
+        $(function(){
+            // button1 wrap
+            $('#btn01').click(
+                function(){
+                    $('strong').wrap('<p>');
+                }
+            );
+
+            // button2 wrapAll
+            $('#btn02').click(
+                function(){
+                    $('strong').wrapAll('<p>'); 
+                }
+            );
+
+            // button3 wrapInner
+            $('#btn03').click(
+                function(){
+                    $('div').wrapInner('<p>'); 
+                }
+            );
+
+            // button4 unwrap
+            $('#btn04').click(
+                function(){
+                    $('strong').unwrap(); 
+                }
+            );
+        });
+    </script>
+</body>
+</html>

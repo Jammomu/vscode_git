@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    <section>
+        <p class="btn01">
+            <img src="images/run/1.png" alt="">
+        </p>
+        <p class="test">1</p>
+    </section>
+
+    <script>
+        $(function(){
+            let index = 1;
+            setInterval(function(){
+                $('.btn01 > img').attr('src', 'images/' + 'run/' + ((index % 15) + 1) + '.png');
+                $('.test').text(index);
+                index++;
+                // if(index > 15){
+                //     index = 1;
+                // }
+            }, 50);
+        });
+    </script>
+</body>
+</html>

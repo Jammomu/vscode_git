@@ -9,37 +9,59 @@
     <script>
         // 1.숫자 배열(짝수 홀수 출력하기)
         const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
         //짝수일 때 짝수 출력
+        //홀수일 때 홀수 출력
+
+        let numCol1 = new Array();
+        let numCol2 = new Array();
+
         for(let i = 0; i <= numbers.length; i++){
             if(numbers[i] % 2 == 0){
-                document.write(numbers[i]);
+                numCol1.push(numbers[i]);
             }
             else{
-                
+                numCol2.push(numbers[i]);
             }
         }
+        document.write('짝수: ', numCol1, '<br>', '홀수: ', numCol2, '<br>');
 
-        //홀수일 때 홀수 출력
-        for(let i = 0; i < numbers.length; i++){
-            if(numbers[i] % 2 != 0){
-                document.write(numbers[i]);
-            }
-        }
 
         //2.배열 총합과 평균을 구하고 출력
-        for(let i = 0; i <= numbers.length; i++){
-            let numAverage
+        let numPlus = 0;
+
+        for(let i = 0; i < numbers.length; i++){
+            numPlus += numbers[i];
         }
+
+        let numAverage = numPlus / numbers.length;
+
+        document.write('배열 총합: ', numPlus, '<br>', '평균: ', numAverage, '<br>');
 
         //3.문자열에서 특정 문자 세기
         //str.length - str의 길이
         const str = "Hello, World!";
         const charToCount = 'o';
         let count = 0;
+
+        for(let i = 0; i < str.length; i++){
+            if(str[i] == 'o'){
+                count++;
+            }
+        }
+        document.write(count, '<br>');
+
         //4.쇼핑 목록에서 특정 품목 찾기 - 버터와 닭고기를 각각 구해서 위치와 재료 출력
         //찾지 못한다면 찾지 못했습니다 출력
         const shoppingList = ['milk', 'bread', 'eggs', 'butter', 'cheese'];
+
+        for(let i = 0; i < shoppingList.length; i++){
+            if(shoppingList[i] == 'butter' || shoppingList[i] == 'chicken'){
+                document.write('위치: ', i + 1, '번째 ', shoppingList[i], '<br>');
+            }
+            else{
+                document.write('not found', '<br>');
+            }
+        }
 
     </script>
 </body>
