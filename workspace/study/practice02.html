@@ -11,14 +11,31 @@
     <!-- 1. 좌석 예약 시스템:
    영화관이나 공연장의 좌석 예약 시스템에서 특정 좌석이 예약 가능한지 확인하는 예제입니다. -->
 
-    <script>
+    <!-- <script>
         const seats = [
             ['A1', 'A2', 'A3', 'A4'],
             ['B1', 'B2', 'B3', 'B4'],
             ['C1', 'C2', 'C3', 'C4']
         ];
-        const reservedSeats = ['A2', 'B3', 'C1'];
-    </script>
+        const reservedSeats = ['A2', 'B3', 'C1']; // 예약된 좌석
+
+        let reserve = prompt('예약할 좌석을 입력하세요.', 'A1 ~ A4, B1 ~ B4, C1 ~ C4');
+        let reserveTf;
+
+        for(let i = 0; i < seats.length; i++){
+            for(let j = 0; j < seats[i].length; j++){
+                if(reserve === seats[i][j]){
+                    reserveTf = true;
+                }
+            }
+        }
+        for(let k = 0; k < reservedSeats.length; k++){
+            if(reserve === reservedSeats[k]){
+                reserveTf = false;
+            }
+        }
+        document.write(reserveTf);
+    </script> -->
 
     <!-- 2. 학교 성적 관리 시스템:
    학생들의 성적을 관리하는 시스템에서 특정 과목의 평균 점수를 계산하는 예제입니다. -->
@@ -32,6 +49,13 @@
         const subject = 'math';
         let totalScore = 0;
         let count = 0;
+
+        // 수학 평균
+        for(let i = 0; i < students.length; i++){
+            
+        }
+        // 영어 평균
+        // 과학 평균
     </script>
 
     <!-- 3. 도시 간 거리 계산:

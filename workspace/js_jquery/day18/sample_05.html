@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    <button id="btn01">Butto1</button>
+    <button id="btn02">Button2</button>
+    <button id="btn03">Button3</button>
+
+    <script>
+        $(function(){
+            $('#btn01').click( // 기본적인 클릭 이벤트 서식
+                function(){
+                    alert('버튼1이 눌렸습니다.');
+                }
+            );
+
+            // $('#btn02').on( // 안에 이벤트가 여러개 들어갈 수 있음
+            //     'click', function(){
+            //         alert('버튼2가 눌렸습니다.');
+            //     }
+            // );
+
+            $('#btn02').on(
+                'mouseover mouseout mouseup mousedown', function(e){
+                    if(e.type === 'mouseover'){
+                        $(this).css('background-color', '#4f4');
+                    }
+                    else if(e.type === 'mousedown'){
+                        $(this).css('background-color', '#fff')
+                    }
+                    else if(e.type === 'mouseup'){
+                        $(this).css('background-color', '#f44')
+                    }
+                    else{
+                        $(this).css('background-color', '#ff4')
+                    }
+                }
+            );
+
+            $('#btn03').one( // 문구 한 번만 출력
+                'click', function(){
+                    alert('버튼3이 눌렸습니다.');
+                }
+            );
+        });
+    </script>
+</body>
+</html>
