@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        dt{
+            width: 200px;
+            padding: 10px;
+            margin-top: 30px;
+            margin-left: 50px;
+            border: 2px solid #000;
+            border-radius: 20px;
+            background-color: #77f;
+            color: #fff;
+            text-align: center;
+        }
+        dd{
+            display: none;
+            margin-top: 10px;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <dl>
+        <dt>Title01</dt>
+        <dd>Lorem ipsum dolor sit amet consectetur adipisicing elit. A assumenda animi, quasi voluptatem dicta amet sunt, optio ducimus similique perferendis commodi debitis? Temporibus delectus exercitationem voluptates, deserunt corporis amet. Necessitatibus?</dd>
+        <dt>Title02</dt>
+        <dd>Lorem ipsum dolor sit amet consectetur adipisicing elit. A assumenda animi, quasi voluptatem dicta amet sunt, optio ducimus similique perferendis commodi debitis? Temporibus delectus exercitationem voluptates, deserunt corporis amet. Necessitatibus?</dd>
+        <dt>Title03</dt>
+        <dd>Lorem ipsum dolor sit amet consectetur adipisicing elit. A assumenda animi, quasi voluptatem dicta amet sunt, optio ducimus similique perferendis commodi debitis? Temporibus delectus exercitationem voluptates, deserunt corporis amet. Necessitatibus?</dd>
+    </dl>
+
+    <script>
+        $(function(){
+            $('dl > dt').on('click',
+                function(){
+                    // 1. $(this): 현재 클릭된 <dt> 요소를 가리킵니다.
+                    // 2. .next('dd'): 현재 클릭된 <dt> 요소의 다음 형제 요소 중 <dd> 요소를 선택합니다.
+                    // 3. .css('display'): 선택된 <dd> 요소의 display CSS 속성 값을 가져옵니다.
+                    // 4. let displaySrc: 가져온 display 속성 값을 displaySrc 변수에 저장합니다.
+                    let displaySrc = $(this).next('dd').css('display');
+                    if(displaySrc == 'none'){
+                        $('dl > dd').slideUp(300); // 모든 <dd> 요소를 슬라이드 업
+                        $(this).next('dd').slideDown(300); // 클릭된 <dt>의 다음 <dd> 요소를 슬라이드 다운
+                    }
+                    else{
+                        $('dl > dd').slideUp(300); // 모든 <dd> 요소를 슬라이드 업
+                    }
+                }
+            );
+        });
+    </script>
+</body>
+</html>

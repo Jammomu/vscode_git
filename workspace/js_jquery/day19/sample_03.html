@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+<body>
+    <div>
+        <ul>
+            <li id="flower"><img src="img/flower.jpg" alt="flower"></li>
+            <li id="building"><img src="img/building.jpg" alt="building"></li>
+        </ul>
+    </div>
+
+    <script>
+        $(function(){
+            $('#flower').on('click',
+                function(){
+                    let imgWidth = $(this).width();
+                    // 클릭시 이미지의 길이 만큼 왼쪽으로 이동
+                    $('div > ul').animate({marginLeft: '-=' + imgWidth},300,'swing');
+                }
+            );
+
+            $('#building').on('click',
+                function(){
+                    let imgWidth = $(this).width();
+                    // 클릭시 이미지의 길이 만큼 오른쪽으로 이동
+                    $('div > ul').animate({marginLeft: '+=' + imgWidth},300,'swing');
+                }
+            );
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        section{
+            width: 500px;
+            margin: 0 auto;
+            overflow: hidden;
+            border: 1px solid #000;
+        }
+        div{
+            float: left;
+            margin-left: 5px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            width: 240px;
+            text-align: center;
+            border: 1px solid #44f;
+        }
+        p{
+            margin: 20px auto;
+            text-align: center;
+        }
+        p.box{
+            width: 150px;
+            height: 150px;
+            background-color: #f44;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div id="box01">
+            <p><button class="btn01">nomal button</button></p>
+            <p class="box general"></p>
+        </div>
+        <div id="box02">
+            <p><button class="btn02">spamming button</button></p>
+            <p class="box spamming"></p>
+        </div>
+    </section>
+
+    <script>
+        $(function(){
+            // nomal button
+            $('.btn01').on('click',function(){
+                $('.general').slideToggle(500);
+            });
+            
+            // spamming button 광클 방지
+            $('.btn02').on('click',function(){
+                $('.spamming:not(:animated)').slideToggle(500);
+            });
+        });
+    </script>
+</body>
+</html>

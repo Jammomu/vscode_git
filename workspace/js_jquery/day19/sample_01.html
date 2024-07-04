@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        p{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 650px;
+            height: 70px;
+            margin: 0 auto 25px;
+        }
+        p:first-child{
+            width: 300px;
+            height: 70px;
+            float: left;
+            background-color: #333;
+            text-align: center;
+            line-height: 70px;
+            font-size: 1.2em;
+            color: #fff;
+        }
+        p:last-child{
+            width: 330px;
+            height: 70px;
+            float: right;
+            background-color: #099;
+        }
+    </style>
+</head>
+<body>
+    <div id="effect01">
+        <p class="button">
+            <button type="button" class="btn01">show</button>
+            <button type="button" class="btn02">hide</button>
+            <button type="button" class="btn03">toggle</button>
+        </p>
+        <p class="back01"></p>
+    </div>
+    
+    <div id="effect02">
+        <p class="button">
+            <button type="button" class="btn01">slideDown</button>
+            <button type="button" class="btn02">slideUp</button>
+            <button type="button" class="btn03">slideToggle</button>
+        </p>
+        <p class="back02"></p>
+    </div>
+    
+    <div id="effect03">
+        <p class="button">
+            <button type="button" class="btn01">fadeIn</button>
+            <button type="button" class="btn02">fadeOut</button>
+        </p>
+        <p class="back03"></p>
+    </div>
+    
+    <div id="effect04">
+        <p class="button">
+            <button type="button" class="btn01">fadeTo</button>
+            <button type="button" class="btn02">fadeIn</button>
+            <button type="button" class="btn03">fadeToggle</button>
+        </p>
+        <p class="back04"></p>
+    </div>
+
+    <script>
+        $(function(){
+            // show
+            $('#effect01 button.btn01').on('click',
+                function(){
+                    // alert('button1');
+                    // 선택자.동작(시간, 가속도, 완료시 동작);
+                    $('.back01').show(500, 'linear',
+                        function(){
+                            $(this).css('background-color', '#f00');
+                        });
+                }
+            );
+
+            // hide
+            $('#effect01 button.btn02').on('click',
+                function(){
+                    // alert('button2');
+                    $('.back01').hide(500, 'linear',
+                        function(){
+                            alert('box hiden');
+                            $(this).css('background-color', '#00f');
+                        });
+                }
+            );
+
+            // toggle
+            $('#effect01 button.btn03').on('click',
+                function(){
+                    // alert('button3');
+                    $('.back01').toggle(500);
+                }
+            );
+
+            // ------------------------------------------------------------------------
+            // slideDown
+            $('#effect02 button.btn01').on('click',
+                function(){
+                    // alert('button1');
+                    // 선택자.동작(시간, 가속도, 완료시 동작);
+                    $('.back02').slideDown(500, 'linear',
+                        function(){
+                            $(this).css('background-color', '#f00');
+                        });
+                }
+            );
+
+            // slideUp
+            $('#effect02 button.btn02').on('click',
+                function(){
+                    // alert('button2');
+                    $('.back02').slideUp(500, 'linear',
+                        function(){
+                            alert('box slideUp');
+                            $(this).css('background-color', '#00f');
+                        });
+                }
+            );
+
+            // slideToggle
+            $('#effect02 button.btn03').on('click',
+                function(){
+                    // alert('button3');
+                    $('.back02').slideToggle(500);
+                }
+            );
+            
+            // ------------------------------------------------------------------------
+            // fadeIn
+            $('#effect03 button.btn01').on('click',
+                function(){
+                    // alert('button1');
+                    // 선택자.동작(시간, 가속도, 완료시 동작);
+                    $('.back03').fadeIn(500, 'linear',
+                        function(){
+                            $(this).css('background-color', '#f00');
+                        });
+                }
+            );
+
+            // fadeOut
+            $('#effect03 button.btn02').on('click',
+                function(){
+                    // alert('button2');
+                    $('.back03').fadeOut(500, 'linear',
+                        function(){
+                            alert('box fadeOut');
+                            $(this).css('background-color', '#00f');
+                        });
+                }
+            );
+            
+            // ------------------------------------------------------------------------
+            // fadeTo
+            $('#effect04 button.btn01').on('click',
+                function(){
+                    // alert('button1');
+                    // 선택자.동작(시간, 가속도, 완료시 동작);
+                    $('.back04').fadeTo(500, 0.2); // 투명도 조절
+                }
+            );
+
+            // fadeIn
+            $('#effect04 button.btn02').on('click',
+                function(){
+                    // alert('button2');
+                    $('.back04').fadeIn(500, 'linear');
+                }
+            );
+
+            // fadeToggle
+            $('#effect04 button.btn03').on('click',
+                function(){
+                    $('.back04').fadeToggle(500);
+                }
+            );
+        });
+    </script>
+</body>
+</html>

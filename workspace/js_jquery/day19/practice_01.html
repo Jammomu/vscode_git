@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: #55f;
+            border: 1px solid #000;
+            margin-left: 0;
+            margin-top: 0;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Start Animation</button>
+    <div id="box"></div>
+
+    <script>
+        $(function(){
+            $('#btn').on('click',
+                function(){
+                    $('#box').animate({width: 400}, 300)
+                    .animate({height: 300}, 400)
+                    .animate({left: 200}, 500)
+                    .animate({top: 100, borderWidth: '10px'}, 'slow')
+                }
+            );
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+    <style>
+        .txt{
+            width: 100px;
+            height: 100px;
+            background-color: #55f;
+            margin-left: 0;
+            margin-top: 0;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <button id="aniBtn">animation start</button>
+    <div class="txt"></div>
+
+    <script>
+        $(function(){
+            // 버튼 클릭시 애니메이션 연속 동작
+            $('#aniBtn').on('click',
+                function move(){ // move = 재기호출(반복해서 실행)
+                    $('.txt').animate({marginLeft: '200px', backgroundColor: '#f55'}, 500)
+                    .animate({marginTop: '200px'}, 500)
+                    .delay(1000) // 1초간 딜레이
+                    .animate({marginLeft: '0px', backgroundColor: '#5f5'}, 500)
+                    .animate({marginTop: '0px'}, 500, move)
+                }
+            );
+        });
+    </script>
+</body>
+</html>

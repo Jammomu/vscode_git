@@ -52,10 +52,30 @@
 
         // 수학 평균
         for(let i = 0; i < students.length; i++){
-            
+            totalScore += students[i].scores.math;
+            count++;
         }
+
+        let mathAverage = parseInt(totalScore / count);
+        document.write('math aberage: ', mathAverage, '<br>');
+
         // 영어 평균
+        for(let i = 0; i < students.length; i++){
+            totalScore += students[i].scores.english;
+            count++;
+        }
+
+        let englishAverage = parseInt(totalScore / count);
+        document.write('english aberage: ', englishAverage, '<br>');
+
         // 과학 평균
+        for(let i = 0; i < students.length; i++){
+            totalScore += students[i].scores.science;
+            count++;
+        }
+
+        let scienceAverage = parseInt(totalScore / count);
+        document.write('science aberage: ', scienceAverage, '<br>');
     </script>
 
     <!-- 3. 도시 간 거리 계산:
