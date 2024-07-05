@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+    <button id="btn01">button1</button>
+    <button id="btn02">button2</button>
+    <button id="btn03">button3</button>
+
+    <h1>Main Window</h1>
+
+    <div>
+        <iframe src="width" width="600" height="400" frameborder="0"></iframe>
+    </div>
+
+    <script>
+        // iframe = (inline frame)의 약자로 HTML 문서 내에 다른 HTML 문서를 삽입할 수 있는 요소입니다.
+        // 웹 페이지 내에 독립된 문서나 콘텐츠를 포함할 수 있게 해줍니다.
+        // 이를 통해 외부 웹 페이지나 다른 HTML 파일을 현재 페이지에 삽입할 수 있습니다.
+        function show(data){
+            console.log(data);
+        }
+        
+        function sum(data1, data2){
+            result = 0;
+            for(let i = data1; i <= data2; i++){
+                result += i;
+            }
+            show(data1 + ' ~ ' + data2 + ' => ' + result);
+        }
+
+        function sumAsnc(data1, data2){
+            $('iframe').attr('src', 'child.html?data1=' + data1 + '&data2' + data2 + '=10&callback=show');
+        }
+        
+        $(function(){
+            $('#btn01').on('click',function(){
+                sum(1,10);
+                sum(2,1000000);
+                sum(3,10);
+                sum(4,10);
+                sum(5,10);
+                sum(6,10);
+                sum(7,10);
+                sum(8,10);
+            });
+
+            $('#btn02').on('click',function(){
+                sum(1,10);
+                sumAsnc(2,1000000);
+                sum(3,10);
+                sum(4,10);
+                sum(5,10);
+                sum(6,10);
+                sum(7,10);
+                sum(8,10);
+            });
+
+            // $('#btn01').on('click', function(){
+            //     $('iframe').attr('src', 'https://ysedu.or.kr'); 
+            // });
+            
+            // $('#btn02').on('click', function(){
+            //     $('iframe').attr('src', 'https://www.daum.net');
+            // });
+            
+            $('#btn03').on('click', function(){
+                $('iframe').attr('src', 'child.html?data1=1&data2=10&callback=show'); // 띄어쓰기 하면 안나옴
+            });
+        });
+
+    </script>
+</body>
+</html>

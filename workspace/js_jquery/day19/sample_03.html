@@ -22,7 +22,7 @@
                 function(){
                     let imgWidth = $(this).width();
                     // 클릭시 이미지의 길이 만큼 왼쪽으로 이동
-                    $('div > ul').animate({marginLeft: '-=' + imgWidth},300,'swing');
+                    $('div > ul').animate({marginLeft: '-=' + imgWidth},300,'swing'); // swing = 애니메이션이 처음과 끝에서 천천히 진행되고, 중간에 빨라집니다.
                 }
             );
 

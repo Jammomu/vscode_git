@@ -105,6 +105,21 @@
             { product: 'Tablet', quantity: 30 }
         ];
         const targetProduct = 'Phone';
+
+        let findName;
+        let findNum;
+
+        for(let i = 0; i < warehouse.length; i++){
+            if(targetProduct == warehouse[i].product){
+                findName = warehouse[i].product;
+                findNum = warehouse[i].quantity;
+                break;
+            }
+            else{
+                let notFind = '제품을 찾을 수 없습니다.';
+            }
+        }
+        document.write(targetProduct? '제품 이름: ' + findName + '/ 남은 수량: ' + findNum : notFind);
     </script>
 </body>
 

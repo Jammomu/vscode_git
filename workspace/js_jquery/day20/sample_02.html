@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+    <input type="text" name="" id="">
+    <p></p>
+    <script>
+        $(function(){
+            $(':input').on('keyup',
+                function(e){
+                    let str = $(this).val();
+                    console.log(str);
+                    $('p').text(str);
+                });
+            
+            // 입력값이 숫자로만 이루어져 있는지 확인하는 함수
+            // function isNumeric(input) { // 정규 표현식을 사용하여 숫자만 포함되어 있는지 확인const regex = /^[0-9]+$/; return regex.test(input); }
+            $(':input').on('change',
+                function(e){
+                    let str = $(this).val();
+                    if(isNumeric(str)){
+                        console.log(str);
+                        $('body').append('<p>' + str + '</p>');
+                    }
+                    else{
+                        alert('숫자만 입력하세요.');
+                        $(this).val('');
+                    }
+                });
+
+            // 입력값이 올바른 이메일 형식인지 확인하는 함수
+            // function isValidEmail(input) { const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; return regex.test(input); }
+            // 입력값이 바뀌면
+            $(':input').on('change',
+                function(e){
+                    let str = $(this).val(); // 입력값 얻기
+                    if(isValidEmail(str)){ // 이메일 형식 체크
+                        console.log(str); // 성공하면 로그 남기고 p요소 추가
+                        $('body').append('<p>' + str + '</p>');
+                    }
+                    else{ //실패하면 일림창
+                        alert('형식에 맞지 않습니다.');
+                        $(this).val(''); // 입력상자 띄우기
+                    }
+                });
+        });
+    </script>
+</body>
+</html>

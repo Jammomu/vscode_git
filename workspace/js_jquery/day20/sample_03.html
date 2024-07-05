@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        span{
+            display: none;
+            color: #f00;
+        }
+    </style>
+</head>
+<body>
+    <p>이름(한글): <input type="text" name="koreanName" id="koreanName"><span>한글로 입력하세요.</span></p>
+    <p>이름(영문): <input type="text" name="englishName" id="englishName"><span>영어로 입력하세요.</span></p>
+
+    <script>
+        $(function(){
+            $('input').on('focus', // span에 있는 text를 input이 focus됬을때 나타났다 사라지는 기능
+                function(){
+                    $(this).next('span')
+                    .css('display', 'inline')
+                    .delay(800)
+                    .fadeOut(1000);
+                }
+            );
+        });
+
+        // 입력값이 한글로만 이루어져 있는지 확인하는 함수
+        function isKorean(input) {
+            const regex = /^[가-힣]+$/;
+            return regex.test(input);
+        }
+        $(document).ready(
+            function(){
+                $('input').on('change',
+                    function(){
+                        let str = $(this).val();
+                        if(isKorean(str)){
+                            console.log(str);
+                            $('body').append('<p>' + str + '</p>');
+                        }
+                        else{
+                            alert('한글만 입력하세요.');
+                            $(this).val('');
+                        }
+                    }
+                );
+            }
+        );
+
+        // const koreanRegex = /^[가-힣ㄱ-ㅎㅏ-ㅣ]*$/; // 자음, 모음 포함한 한글만 허용하는 정규 표현식
+        //     const englishRegex = /^[a-zA-Z]*$/; // 영어만 허용하는 정규 표현식
+        //     $('#koreanName').on('input', function(){
+        //         var inputVal = $(this).val();
+        //         if (!koreanRegex.test(inputVal)) {
+        //             $(this).next('span').css('display', 'inline'); // 오류 메시지 표시
+        //         } else {
+        //             $(this).next('span').css('display', 'none'); // 오류 메시지 숨김
+        //         }
+        //     });
+        //     $('#englishName').on('input', function(){
+        //         var inputVal = $(this).val();
+        //         if (!englishRegex.test(inputVal)) {
+        //             $(this).next('span').css('display', 'inline'); // 오류 메시지 표시
+        //         } else {
+        //             $(this).next('span').css('display', 'none'); // 오류 메시지 숨김
+        //         }
+        //     });
+
+        // 입력값이 영문으로만 이루어져 있는지 확인하는 함수
+        function isEnglish(input) {
+            const regex = /^[A-Za-z]+$/;
+            return regex.test(input);
+        }
+    </script>
+</body>
+</html>

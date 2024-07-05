@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        /* 전체 섹션에 대한 스타일 지정 */
+        section{
+            border: 1px solid black;
+            width: 500px;
+            margin: 20px auto;
+            padding: 30px;
+            position: relative;
+        }
+        /* 섹션의 h1 태그에 대한 스타일 지정 */
+        section > h1{
+            font: bold 25px Aria;
+            text-align: center;
+            margin-bottom: 25px;
+            color: #63c;
+        }
+        /* 버튼에 대한 스타일 지정 */
+        section > p{
+            position: absolute;
+            top: 220px;
+        }
+        /* 섹션 안에 p 태그의 id가 prev인 객체의 스타일 지정 */
+        section > p#prev{
+            left: -11px;
+        }
+        /* 섹션 안에 p 태그의 id가 next인 객체의 스타일 지정 */
+        section > p#next{
+            right: -11px;
+        }
+        /* div id가 view인 객체의 스타일 지정 */
+        div#view{
+            width: 402px;
+            margin: 0 auto;
+            border: 1px solid red;
+        }
+        /* ul의 스타일 지정 */
+        div#view > ul{
+            width: 2000px;
+            height: 250px;
+        }
+        /* 이미지의 스타일 지정. 옆으로 나열하기 위해 float:left; */
+        div#view > ul > li{
+            float: left;
+            width: 400px;
+        }
+        /* div#view > ul > li > img 스타일 지정 */
+        div#view > ul > li > img{
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <h1>Slide Gallery</h1>
+    <p id="prev"><img src="img/prev.png" alt=""></p>
+    <p id="next"><img src="img/next.png" alt=""></p>
+
+    <div id="view">
+        <ul id="source">
+            <li><img src="img/pic01.jpg" alt="화보1"></li>
+            <li><img src="img/pic02.jpg" alt="화보2"></li>
+            <li><img src="img/pic03.jpg" alt="화보3"></li>
+            <li><img src="img/pic04.jpg" alt="화보4"></li>
+            <li><img src="img/pic05.jpg" alt="화보5"></li>
+        </ul>
+    </div>
+    <script>
+        // Slide Gallery
+        $(function(){
+            // 버튼 클릭에 대한 함수 만들기
+            // 중앙에 나오는 사진을 기준으로 양쪽에 사진이 미리 대기해야하기 때문에 margin-left를 -400으로 줌.
+            $('#source').css('margin-left','-400px');
+            // 왼쪽으로 움직이게 하는 함수 만들기
+            $('#prev').on('click', function(){
+                // 그림이 400xp이니까 마진 레프트를 -=400px, 속력은 0.3초(300)
+                $('#source').animate({marginLeft :'-=400px'},300,'swing',function(){
+                    //첫번째그림을 맨뒤로 보내기
+                    // 왼쪽으로 가야하니까 소스에서 첫번째 있는 놈을 찾아서 맨 뒤로 보내라 하는 코드 (appendTo)
+                    $('#source>li:first').appendTo('#source');
+                    // 여기서 문제가 발생. 사진이 넘어가는데 맨 앞의 놈이 뒤로 가면서 두번째 사진이 아닌 세번째 사진이 보여짐.
+                    // 그래서 this에 대한 마진 레프트를 0px 추가
+                    // 근데 마진 레프트를 0으로 주면 오른쪽으로 이동했을 때 하얀 화면이 잠시 보여지는 현상이 있음.
+                    // 그래서 this에 대한 마진 레프트를 사진 크기와 같은 -400px로 설정.
+                    $(this).css('margin-left','-400px');
+                });
+            });
+
+            // 오른쪽으로 움직이게 하는 함수 만들기
+            $('#next').on('click', function(){
+                // 그림이 400px이니까 마진 레프트를 +=400px, 속력은 0.3초(300)
+                $('#source').animate({marginLeft :'+=400px'},300,'swing',function(){
+                    //맨뒤그림을 맨앞으로보내기
+                    // 반대로 맨 뒤의 그림을 맨 앞으로 보내라 하는 코드 (prependTo)
+                    $('#source>li:last').prependTo("#source");
+                    $(this).css('margin-left','-400px');
+                });
+            });
+        });
+        // 근데 이거 광클 존나하면 계속 넘어감. 광클방지 필요할듯.
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        div#content{
+            width: 960px;
+            margin: 100px auto;
+            border: 1px solid #000;
+        }
+        ul{
+            width: 300px;
+            float: left;
+            background-color: #000;
+            padding: 10px;
+        }
+        div#main{
+            float: right;
+            width: 520px;
+            border: 1px solid #f55;
+            position: relative;
+        }
+        div#main > img{
+            left: 0;
+            right: 0;
+            position: absolute;
+        }
+        ul > li{
+            width: 140px;
+            float: left;
+            list-style: none;
+            margin: 5px;
+        }
+        ul > li a > img{
+            width: 100%;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <ul>
+            <!-- a 태그 안에 href가 아닌 data를 써도 무관(선생님은 data를 좋아하심) -->
+            <li><a data="img/img_01.jpg"><img src="img/img_01.jpg" alt=""></a></li>
+            <li><a data="img/img_02.jpg"><img src="img/img_02.jpg" alt=""></a></li>
+            <li><a data="img/img_03.jpg"><img src="img/img_03.jpg" alt=""></a></li>
+            <li><a data="img/img_04.jpg"><img src="img/img_04.jpg" alt=""></a></li>
+            <li><a data="img/img_05.jpg"><img src="img/img_05.jpg" alt=""></a></li>
+            <li><a data="img/img_06.jpg"><img src="img/img_06.jpg" alt=""></a></li>
+        </ul>
+
+        <div id="main"><img src="img/img_01.jpg" alt=""></div>
+    </div>
+
+    <script>
+        $(function(){
+            $('ul > li > a').on('click', function(){ // 클릭 이벤트
+                let url = $(this).attr('data');
+                // alert(url); // 중간 확인용
+                // $('#main > img').attr('src', url); // 얘는 간단하게 실행되는 코드
+                // 를 좀 더 이쁘게 꾸미기 위해서 아래 코드를 씀
+                $('#main').prepend('<img src="' + url + '">');
+                $('#main > img:last').fadeOut(300, function(){
+                    $('#main > img:last').remove();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

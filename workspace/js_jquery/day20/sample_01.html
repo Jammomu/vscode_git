@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li><input type="text" value="INPUT 태그"></li>
+        <li><input type="text" value="INPUT 태그" disabled></li>
+        <li><input type="password" value="INPUT 태그, :password" ></li>
+        <li><input type="image" src="img/button.png" ></li>
+        <li><input type="file"></li>
+        <li><input type="checkbox"></li>
+        <li><input type="checkbox" checked></li>
+        <li><input type="radio"></li>
+        <li><input type="radio" checked></li>
+        <li><select>
+            <option>SELECT 태그, 가</option>
+            <option>SELECT 태그, 나</option>
+        </select></li>
+        <li><input type="button" value="INPUT 태그, :button"></li>
+        <li><button type="reset">BUTTON 태그, :reset</button></li>
+        <li><button type="submit">BUTTON 태그, :submit</button></li>
+    </ul>
+
+    <script>
+        $(function(){
+            // $(':input').css('background-color', '#55f');
+            // $(':input').css('border', '3px solid #f55');
+            // $(':text').css('border', '3px solid #5f5');
+            // $(':password').css('border', '3px solid #f5f');
+            // $(':radio').css('accent-color', '#f55');
+            // $(':checkbox').css('accent-color', '#f55');
+            // $(':submit').css('border', '3px solid #5ff');
+            // $(':password').css('border', '3px solid #f5f');
+            // $(':reset').css('border', '3px solid #f5f');
+            // $(':button').css('border', '3px solid #ff5');
+            // $(':image').css('border', '3px solid #555');
+            // $(':file').css('border', '3px solid #f5f');
+
+            // $(':disabled').css('border', '3px solid #f55');
+            // $(':enabled').css('border', '3px solid #5f5');
+            // $(':selected').css('border', '3px solid #f55');
+
+            $(':button').click(
+                function(){
+                    $(':input').val('Hellow'); // 버튼 클릭시 인풋박스에 값 넣기
+                }
+            );
+        });
+    </script>
+</body>
+</html>
